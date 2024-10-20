@@ -1,181 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> VADAANYA DSC(SGT) MEGA GRAND TEST - 2024</title>
-  <link rel="stylesheet" href="DSC.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-1ZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9s+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script src="./DSC.js" type="text/javascript"></script>
-  </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <link rel="stylesheet" href="DSC.css">
+    <script src="DSC.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
-
 <body>
-  <div class="wrapper">
-    <img src="https://vadaanya.org/wp-content/uploads/2019/06/Logo.png" width="100%" height="100" class="mainLogo" alt="">
-      <div class="title">
-          DSC(SGT) MEGA GRAND TEST - 2024
-      </div>
-    <form action="POST" data-netlify="true">
-      <div class="form">
-        <div class="inputfield">
-          <label>Student Name</label>
-          <input type="text" class="input" id="studentname" name="sname" placeholder="Enter Student name" maxlength="30"
-            pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
-            <span id="fname-error"></span>
+<nav style="
+    padding-top: 0;
+    padding-bottom: 0;">
+    <ul>
+        <li><img src="https://vadaanya.org/wp-content/uploads/2019/06/Logo.png" width="30" height="30" class="mainLogo"
+                 alt="Logo"></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Vadaanya</a></li>
+        <li><a href="#">Society</a></li>
+        <li><a href="#">Team Vadaanya</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Donate</a></li>
+    </ul>
+</nav>
+<form class="form-wrapper" onsubmit="return sendData()" id="registrationForm">
+    <header class="header">
+        <h1>DSC(SGT) MEGA GRAND TEST - 2024</h1>
+    </header>
+    <div class="form-container">
+        <div class="form-group">
+            <label for="student-name">Student Name <span class="asterisk">*</span></label>
+            <input type="text" id="student-name" name="student-name" placeholder="Enter Student Name" maxlength="30"
+                   pattern="[A-Za-z\s]{1,32}" required
+                   oninvalid="setCustomMessageStudent(this)"
+                   oninput="setCustomMessageStudent(this)">
         </div>
-        <div class="inputfield">
-          <label>Father Name</label>
-          <input type="text" class="input" id="name" name="fname" placeholder="Enter Father name" maxlength="30"
-            pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
+        <div class="form-group">
+            <label for="father-name">Father Name <span class="asterisk">*</span></label>
+            <input type="text" id="father-name" name="father-name" placeholder="Enter Father Name" maxlength="30"
+                   pattern="[A-Za-z\s]{1,32}" required
+                   oninvalid="setCustomMessageFather(this)"
+                   oninput="setCustomMessageFather(this)">
         </div>
-                <div class="inputfield" id="gender">
-          <label for="">Gender</label>
-          <input type="radio" name="gender" id="radio" value="Male">Male
-          <input type="radio" name="gender" id="radio" value="Female">Female
-        </div>
-       <div class="inputfield">
-  <label for="aadhar-number">Aadhaar Number</label>
-  <input type="text" class="input" name="aadhar-number" id="aadhar-number" maxlength="12" placeholder="Enter your Aadhaar number" pattern="[0-9]{12}" title="Please enter a valid 12-digit Aadhaar number">
-</div>
-
-        <div class="inputfield">
-          <label for="">Mobile Number</label>
-          <div class="custom-select" id="phone-codes">
-            <select id="phone-code">
-              <option value="+91">+91</option>
+        <div class="form-group">
+            <label for="gender">Gender <span class="asterisk">*</span></label>
+            <select id="gender" name="gender" required oninvalid="this.setCustomValidity('Choose Your Gender')"
+                    oninput="this.setCustomValidity('')">
+                <option value="">-- Choose your Gender --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
             </select>
-          </div>
-          <input type="tel" class="input" name="phone-number" maxlength="10" id="phone-number"
-            placeholder="Enter your phone number" pattern="[7-9]{1}[0-9]{9}" title="Please enter valid phone number">
         </div>
-       <div class="inputfield">
-          <label>Caste</label>
-          <div class="custom_select">
-            <select id="Caste" name="Caste" required>
-              <option value="">--Select your caste--</option>
-              <option value="OC">OC</option>
-              <option value="BC-A">BC-A</option>
-              <option value="BC-B">BC-B</option>
-              <option value="BC-C">BC-C</option>
-              <option value="BC-D">BC-D</option>
-              <option value="BC-E">BC-E</option>
-              <option value="SC">SC</option>
-              <option value="ST">ST</option>
-              <option value="SC">SC</option>
+        <div class="form-group">
+            <label for="aadhaar-number">Aadhaar Number <span class="asterisk">*</span></label>
+            <input type="text" id="aadhaar-number" name="aadhaar-number" maxlength="12" placeholder="1234 5678 9012"
+                   required
+                   oninvalid="setAadhaarMessage(this)"
+                   oninput="setAadhaarMessage(this)">
+        </div>
+        <div class="form-group">
+            <label for="mobile-number">Mobile Number <span class="asterisk">*</span></label>
+            <input type="text" id="mobile-number" name="mobile-number" placeholder=" +91 9876543210" required
+                   oninvalid="setMobileMessage(this)"
+                   oninput="setMobileMessage(this)">
+        </div>
+        <div class="form-group">
+            <label for="caste">Caste <span class="asterisk">*</span></label>
+            <select id="caste" name="caste" required oninvalid="this.setCustomValidity('Select your caste')"
+                    oninput="this.setCustomValidity('')">
+                <option value="">-- Select your caste --</option>
+                <option value="OC">OC</option>
+                <option value="BC-A">BC-A</option>
+                <option value="BC-B">BC-B</option>
+                <option value="BC-C">BC-C</option>
+                <option value="BC-D">BC-D</option>
+                <option value="BC-E">BC-E</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="SC">SC</option>
             </select>
-          </div>
         </div>
+        <div class="form-group">
+            <label for="test-score">Previous Test Score</label>
+            <input type="text" id="test-score" name="test-score" placeholder="Previous Test Score">
+        </div>
+        <div class="form-group">
+            <label for="district">District <span class="asterisk">*</span></label>
+            <select id="district" name="district" onchange="updateMandalOptions()" required
+                    oninvalid="this.setCustomValidity('Choose your District')" oninput="this.setCustomValidity('')">
+                <option value="">-- Select your district --</option>
+                <option value="Sri Sathya Sai">Sri Sathya Sai</option>
+                <option value="Ananthapur">Ananthapur</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="mandal">Mandal <span class="asterisk">*</span></label>
+            <select id="mandal" name="mandal" size="1" required oninvalid="this.setCustomValidity('Choose your Mandal')"
+                    oninput="this.setCustomValidity('')">
+                <option value="">-- Select your Mandal --</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth <span class="asterisk">*</span></label>
+            <input type="date" id="dob" name="dob" placeholder="01/01/1990" required
+                   oninvalid="this.setCustomValidity('Choose your Date of Birth')" oninput="this.setCustomValidity('')">
 
-         <div class="inputfield" id="district">
-    <label for="">District</label>
-    <input type="radio" name="district" id="radio" value="Sri Sathya Sai" onclick="updateMandalOptions()">Sri Sathya Sai
-    <input type="radio" name="district" id="radio" value="Ananthapur" onclick="updateMandalOptions()">Ananthapur
-  </div>
-  <div class="inputfield">
-    <label for="mandal">Mandal</label>
-    <div class="custom_select">
-      <select id="mandal" name="mandal" required>
-        <option value="">--Select your Mandal--</option>
-        <!-- Options will be dynamically added here -->
-      </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address <span class="asterisk">*</span></label>
+            <input type="email" id="email" name="email" placeholder="abc@gmail.com"
+                   required
+                   oninvalid="setEmailMessage(this)"
+                   oninput="setEmailMessage(this)">
+
+        </div>
+        <div class="form-group">
+            <label for="dummy" id="dummy">Dummy Data</label>
+            <input type="dummy" id="dummy" name="dummy" placeholder="Dummy Data">
+        </div>
+        <div class="terms">
+            <input type="checkbox" id="check" name="check" required
+                   oninvalid="this.setCustomValidity('Check it ')"
+                   oninput="this.setCustomValidity('')">
+            <label for="check" class="text">I hereby declare that the above information provided is true and
+                correct.</label>
+        </div>
     </div>
-  </div>
-        <!--<div class="inputfield">
-          <label for="">Age</label>
-          <input type="text" class="input" name="age" placeholder="Enter your age" maxlength="2" pattern="^[0-9]{2}$"
-            required placeholder="Enter your age" title="Enter numbers only">
-        </div>-->
-
-        <div class="inputfield">
-          <label for="">Date of Birth</label>
-          <input type="date" class="input" name="dob" required>
+    <div class="btn-container">
+        <div class="form-group">
+            <button type="Reset" value="Reset" class="btn" onclick="Reset()">Reset</button>
         </div>
-
-        <div class="inputfield">
-          <label>Email Address</label>
-          <input type="email" class="input" name="email" placeholder="Enter your email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required>
+        <div class="form-group">
+            <button type="submit" onclick="sendData()">Register</button>
         </div>
-
-        <div class="inputfield">
-          <label>Password</label>
-          <input type="password" class="input" id="password" name="" placeholder="Enter your password min 8 characters"
-            autocomplete="off" onkeyup='check()' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-            maxlength="100" minlength="8" required>
-        </div>
-
-        <div class="inputfield">
-          <label>Confirm Password</label>
-          <input type="password" onkeyup='check()' class="input" id="confirm-password" name=""
-            placeholder="Confirm password" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-            maxlength="100" minlength="8" required>
-        </div>
-
-        <p id="message"></p>
-
-
-
-        <!--<div class="inputfield">
-          <label>Address</label>
-          <textarea class="textarea" name="address" id="" cols="30" rows="2" placeholder="Enter your address"
-            pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" maxlength="100" required></textarea>
-        </div>-->
-
-
-        <div class="inputfield">
-          <label>Pin Code</label>
-          <input type="text" class="input" name="pincode" placeholder="Enter your pin code" maxlength="6"
-            pattern="^[0-9]{6}$" required>
-        </div>
-
-        <!--<div class="inputfield" id="hobbies" >
-          <label for="">Hobbies</label>
-          <div class="hobbies" >
-            <input type="checkbox" name="Hobbies" id="" value="Music">
-            <label for="">Music</label>
-            <input type="checkbox" name="Hobbies" id="" value="Movies">
-            <label for="">Movies</label>
-            <input type="checkbox" name="Hobbies" id="" value="Sports">
-            <label for="">Sports</label>
-            <input type="checkbox" name="Hobbies" id="" value="Travel">
-            <label for="">Travel</label>
-          </div>
-        </div>-->
-
-        <!--<div class="inputfield">
-          <label>Upload Photo</label><p id="file-size">*Max size 100kb.</p>
-          <input type="file" name="myfile" id="myfile" placeholder="Upload your photo" rows="7" required />
-
-        </div>-->
-
-        <div class="inputfield terms">
-          <label class="check">
-            <input type="checkbox" name="check" value="Declared" required>
-            <span class="checkmark"></span>
-          </label>
-          <p>I hereby declare that the above information provided is true and correct.</p>
-        </div>
-
-        <div class="inputfield" required>
-          <div data-netlify-recaptcha="true"></div>
-        </div>
-
-        <div class="inputfield btns" id="btn">
-          <button type="submit" value="Register" class="btn" onclick="validateForm()">Register</button>
-          <button type="reset" value="Reset" class="btn">Reset</button>
-        </div>
-
-      </div>
-    </form>
-  </div>
-
+    </div>
+</form>
 </body>
-
 </html>
