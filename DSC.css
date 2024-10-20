@@ -1,0 +1,242 @@
+.form-wrapper {
+    background-image: url("https://th.bing.com/th/id/OIP._QIi6rH1XmbDGTdcJniLAwHaE7?w=280&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7"); /* Replace with your image path */
+    background-size: cover; /* Ensure the image covers the entire element */
+    background-attachment: fixed; /* Fix the background image */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; }
+.form-container {
+    display: flex;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: #F9F7ED;
+}
+
+.btn-container {
+    display: flex;
+    /*flex-direction: column;*/
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 48%;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.form-group input, .form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    height:50px;
+    font-size: 20px;
+}
+
+.form-group button {
+    margin: 0 auto;
+    border-radius: 15px;
+    width: 100%;
+    background-color: #0720A9; /* Initial button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    height:80px;
+}
+
+/*button:hover {
+    background-color: #0080ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}*/
+
+.form-group button[type="reset"] {
+    background-color: #ff8000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.form-group button[type="reset"]:hover {
+    background-color:        #ff0000; /* Lighter color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+.header {
+    text-align: center; /* Center the header */
+    color: yellow; /* Set background color to yellow */
+    padding: 20px; /* Add some padding for better spacing */
+}
+
+.header h1 {
+    margin: 0; /* Remove default margin */
+    color: yellow; /* Set text color to black for contrast */
+}
+@media (min-width: 375px) and (max-width: 667px) {
+    body{
+        margin: 0;
+        padding: 0;
+
+    }
+    /*.form-group label {
+           display:none;
+       }*/
+    .form-container {
+        flex-direction: row;
+        /*flex-wrap: wrap;*/
+        width: 80%;   }
+    .header h1 {
+        margin: 0; /* Remove default margin */
+        color: yellow; /* Set text color to black for contrast */
+        font-size:18px;
+    }
+    .form-group input, .form-group select,.form-group select option{
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 7px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-group button {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        width: 28%;
+    }
+    #dummy{
+        display:none;
+    }
+    .form-group {
+        flex: 1 1 48%;
+        margin-right: 4%;
+        width: 50vw;
+    }.form-group button {
+
+    width: 88%;
+    background-color: #0720A9; /* Initial button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+    button:hover {
+        background-color: #0080ff; /* Lighter color on hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    }
+
+    .form-group button:nth-child(2) {
+        display: none;
+    }
+
+    .form-group button[type="reset"] {
+        background-color: orange;
+        color: white;
+        display:none;
+    }
+
+}
+
+nav {
+    background-color: #36622B;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between items */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li img.mainLogo {
+    width: 1000px;
+    height: 100px; /* Adjust the height as needed */
+    flex: 0; /* Prevent the image from stretching */
+    float: left;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    text-align: center; /* Center the text within the list items */
+}
+
+nav ul li a:hover {
+    background-color: #5cbf9a;
+}
+#dummy{
+    visibility:hidden;
+}
+.text{
+    margin-top:10px;
+    font-size:20px;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+.asterisk{
+    color:red;
+}.form
+/*-group input:focus,
+.form-group select:focus {
+    background-color: #FFFFE0;
+}*/
+
+/* Increase the size of the input field */
+input[type="date"] {
+    padding: 10px;
+    font-size: 18px; /* Increase font size */
+    height: 50px; /* Increase height */
+    border-radius: 7px;
+    border: 1px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Increase the size of the calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    font-size: 24px; /* Increase icon size */
+}
+button:disabled {
+    background-color: #0080ff;
+    cursor: not-allowed;
+}
+
+
