@@ -76,10 +76,8 @@ function updateMandalOptions() {
 <option id="option" value="OTHER">OTHER</option>
         `;
     }
-
     mandalSelect.innerHTML = options;
 }
-
 function Reset() {
     document.getElementById('student-name').value = '';
     document.getElementById('father-name').value = '';
@@ -93,77 +91,13 @@ function Reset() {
     document.getElementById('dob').value = '';
     document.querySelector('input[name="email"]').value = '';
 }
-document.getElementById('student-form').addEventListener('submit', function(event) {
-});
-function areFieldsFilled() {
-    const fields = [
-        'student-name', 'father-name', 'gender', 'aadhaar-number',
-        'mobile-number', 'caste', 'district', 'mandal', 'dob', 'email'
-    ];
-    return fields.every(id => document.getElementById(id).value.trim() !== '');
-}
-
-function validateCheckbox() {
-    const checkbox = document.querySelector('input[name="check"]');
-    const registerButton = document.querySelector('button[type="submit"]');
-    if (areFieldsFilled()) {
-        checkbox.disabled = false;
-        registerButton.disabled = !checkbox.checked;
-    } else {
-        checkbox.disabled = true;
-        registerButton.disabled = true;
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const checkBox = document.getElementById('check');
-
-    checkBox.addEventListener('change', function () {
-        if (checkBox.checked) {
-            validateCheckbox()
-        }
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('registrationForm');
-    const checkBox = document.getElementById('check');
-    const registerButton = document.getElementById('submit');
-
-    function areFieldsFilled() {
-        const fields = [
-            'student-name', 'father-name', 'gender', 'aadhaar-number',
-            'mobile-number', 'category', 'district', 'mandal', 'dob', 'email'
-        ];
-        return fields.every(id => document.getElementById(id).value.trim() !== '');
-    }
-
-    function validateCheckbox() {
-        if (areFieldsFilled()) {
-            checkBox.disabled = false;
-            registerButton.disabled = !checkBox.checked;
-        } else {
-            checkBox.disabled = true;
-            registerButton.disabled = true;
-        }
-    }
-
-    form.addEventListener('input', validateCheckbox);
-    checkBox.addEventListener('change', function () {
-        registerButton.disabled = !checkBox.checked;
-    });
-});
-
 document.getElementById('registrationForm').addEventListener('submit', function (event) {
     event.preventDefault();
     sendData();
 });
-
 function sendData() {
     if (!document.querySelector('input[name="check"]').checked) {
         //alert('You must declare that the information is true and correct');
-        return false;
-    }
-    if (!areFieldsFilled()) {
         return false;
     }
     const data = {
@@ -180,7 +114,7 @@ function sendData() {
         email: document.getElementById('email').value,
     };
 
-    fetch('https://vadaanyadscapi.azurewebsites.net/swagger/index.html', {
+    fetch('https://vadaanyadscapi.azurewebsites.net', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -202,14 +136,6 @@ function sendData() {
         console.error('Error:', error);
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const checkbox = document.querySelector('input[name="check"]');
-    const fields = document.querySelectorAll('input[type="text"], input[type="email"], input[type="date"], select');
-    fields.forEach(field => field.addEventListener('input', validateCheckbox));
-    checkbox.addEventListener('change', validateCheckbox);
-    validateCheckbox(); // Initial check
-});
 function setCustomMessageStudent(input) {
     const value = input.value;
     const regex = /^[A-Za-z\s]{1,32}$/;
