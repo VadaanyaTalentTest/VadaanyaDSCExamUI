@@ -100,6 +100,9 @@ function sendData() {
         //alert('You must declare that the information is true and correct');
         return false;
     }
+    if (!areFieldsFilled()) {
+        return false;
+    }
     const data = {
         studentName: document.getElementById('student-name').value,
         fatherName: document.getElementById('father-name').value,
@@ -114,7 +117,7 @@ function sendData() {
         email: document.getElementById('email').value,
     };
 
-    fetch('https://vadaanyadscapi.azurewebsites.net', {
+    fetch('https://vadaanyadscapi.azurewebsites.net/StudentDetails', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -222,3 +225,18 @@ function setEmailMessage(input) {
     }
 }
 
+function areFieldsFilled() {
+    const fields = [
+        'student-name', 'father-name', 'gender', 'aadhaar-number',
+        'mobile-number', 'category', 'district', 'mandal', 'dob', 'email'
+    ];
+
+    return fields.every(id => {
+        const element = document.getElementById(id);
+        if (element.tagName === 'select') {
+            return element.options[element.selectedIndex].value.trim() !== '';
+        } else {
+            return element.value.trim() !== '';
+        }
+    });
+}
