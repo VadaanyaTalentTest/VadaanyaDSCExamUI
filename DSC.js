@@ -144,7 +144,7 @@ function sendData() {
         email: document.getElementById('email').value,
     };
 
-    fetch('http://localhost:5225/StudentDetails', {
+    fetch('https://vadaanyadscapi.azurewebsites.net/StudentDetails', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
