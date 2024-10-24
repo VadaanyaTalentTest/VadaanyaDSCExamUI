@@ -52,10 +52,14 @@
         </div>
         <div class="form-group">
             <label for="mobile-number">Mobile Number <span class="asterisk">*</span></label>
-            <input type="text" id="mobile-number" name="mobile-number" placeholder=" +91 0000000000" required
-                   oninvalid="setMobileMessage(this)"
-                   oninput="setMobileMessage(this)">
+            <div style="display: flex; align-items: center;">
+                <input type="text" value="+91" disabled style="width: 55px; background-color:white; text-align: center;">
+                <input type="text" id="mobile-number" name="mobile-number"  maxlength="10" placeholder="0000000000" required
+                       oninvalid="setMobileMessage(this)"
+                       oninput="setMobileMessage(this)">
+            </div>
         </div>
+
         <div class="form-group">
             <label for="category">Category <span class="asterisk">*</span></label>
             <select id="category" name="category" required oninvalid="this.setCustomValidity('Select your category')"
