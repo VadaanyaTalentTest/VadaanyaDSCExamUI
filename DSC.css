@@ -1,15 +1,9 @@
-.form-wrapper {
-    background-image: url("https://th.bing.com/th/id/OIP._QIi6rH1XmbDGTdcJniLAwHaE7?w=280&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7"); /* Replace with your image path */
-    background-size: cover; /* Ensure the image covers the entire element */
-    background-attachment: fixed; /* Fix the background image */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; }
 .form-container {
     display: flex;
     /*flex-direction: column;*/
     flex-wrap: wrap;
     gap: 10px;
-    max-width: 1800px;
+    max-width: 2000px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -53,7 +47,7 @@
     margin: 0 auto;
     border-radius: 15px;
     width: 100%;
-    background-color: #0720A9; /* Initial button color */
+    background-color: green; /* Initial button color */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -62,13 +56,15 @@
     display: inline-block;
     font-size: 16px;
     transition: background-color 0.3s, box-shadow 0.3s;
-    height:80px;
+    height: 80px;
+    box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
 }
 
-/*button:hover {
+
+button:hover {
     background-color: #0080ff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}*/
+}
 
 .form-group button[type="reset"] {
     background-color: #ff8000;
@@ -91,24 +87,28 @@
 
 .header h1 {
     margin: 0; /* Remove default margin */
-    color: yellow; /* Set text color to black for contrast */
+    color: green; /* Set text color to black for contrast */
 }
 @media (min-width: 375px) and (max-width: 667px) {
     body{
         margin: 0;
         padding: 0;
-
     }
-    /*.form-group label {
-           display:none;
-       }*/
+    #text{
+        margin-top:10px;
+        font-size:20px;
+        color:cornflowerblue;
+    }
+    .form-group label {
+        font-size:20px;
+    }
     .form-container {
         flex-direction: row;
         /*flex-wrap: wrap;*/
         width: 80%;   }
     .header h1 {
         margin: 0; /* Remove default margin */
-        color: yellow; /* Set text color to black for contrast */
+        color: green; /* Set text color to black for contrast */
         font-size:18px;
     }
     .form-group input, .form-group select,.form-group select option{
@@ -136,9 +136,9 @@
         margin-right: 4%;
         width: 50vw;
     }.form-group button {
-
     width: 88%;
-    background-color: #0720A9; /* Initial button color */
+    height:50px;
+    background-color: green; /* Initial button color */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -148,10 +148,6 @@
     font-size: 16px;
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
-    button:hover {
-        background-color: #0080ff; /* Lighter color on hover */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-    }
 
     .form-group button:nth-child(2) {
         display: none;
@@ -162,7 +158,6 @@
         color: white;
         display:none;
     }
-
 }
 
 nav {
@@ -205,7 +200,8 @@ nav ul li a:hover {
 }
 .text{
     margin-top:10px;
-    font-size:20px;
+    font-size:25px;
+    color:cornflowerblue;
 }
 .error-message {
     color: red;
@@ -238,5 +234,15 @@ button:disabled {
     background-color: #0080ff;
     cursor: not-allowed;
 }
-
+.spanAadharid{
+    color:cornflowerblue;
+    font-size:20px;
+}
+.dialog {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #F9F9F9;
+    text-align:center;
+}
 

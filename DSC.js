@@ -5,138 +5,111 @@ function updateMandalOptions() {
     if (selectedDistrict === 'Sri Sathya Sai') {
         options = `
             <option id="option" value="">--Select your Mandal--</option>
-            <option id="option" value="PUTTAPARTHI">PUTTAPARTHI</option>
-            <option id="option" value="BUKKAPATNAM">BUKKAPATNAM</option>
-            <option id="option" value="KOTHACHERUVU">KOTHACHERUVU</option>
-            <option id="option" value="NALLAMADA">NALLAMADA</option>
-            <option id="option" value="DHARMAVARAM">DHARMAVARAM</option>
-            <option id="option" value="BATHALAPALLE">BATHALAPALLE</option>
-            <option id="option" value="TADIMARRI">TADIMARRI</option>
-            <option id="option" value="MUDIGUBBA">MUDIGUBBA</option>
-            <option id="option" value="RAMAGIRI">RAMAGIRI</option>
-            <option id="option" value="KANAGAPALLI">KANAGAPALLI</option>
-            <option id="option" value="CHENNEKOTHAPALLI">CHENNEKOTHAPALLI</option>
-            <option id="option" value="TALUPULA">TALUPULA</option>
-            <option id="option" value="NAMBULAPULAKUNTA">NAMBULAPULAKUNTA</option>
-            <option id="option" value="GANDLAPENTA">GANDLAPENTA</option>
-            <option id="option" value="KADIRI">KADIRI</option>
-            <option id="option" value="OUBULADEVARACHERUVU">OUBULADEVARACHERUVU</option>
-            <option id="option" value="NALLACHERUVU">NALLACHERUVU</option>
-            <option id="option" value="TANAKAL">TANAKAL</option>
-            <option id="option" value="AMADAGUR">AMADAGUR</option>
-            <option id="option" value="RODDAM">RODDAM</option>
-            <option id="option" value="MADAKASIRA">MADAKASIRA</option>
-            <option id="option" value="AMARAPURAM">AMARAPURAM</option>
-            <option id="option" value="GUDIBANDA">GUDIBANDA</option>
-            <option id="option" value="ROLLA">ROLLA</option>
-            <option id="option" value="AGALI">AGALI</option>
-            <option id="option" value="PARIGI">PARIGI</option>
-            <option id="option" value="PENUKONDA">PENUKONDA</option>
-            <option id="option" value="GORANTLA">GORANTLA</option>
-            <option id="option" value="SOMMANDEPALLI">SOMMANDEPALLI</option>
-            <option id="option" value="HINDUPUR">HINDUPUR</option>
-            <option id="option" value="LEPAKSHI">LEPAKSHI</option>
-            <option id="option" value="CHILAMATHUR">CHILAMATHUR</option>
+<option id="option" value="AGALI">AGALI</option>
+<option id="option" value="AMADAGUR">AMADAGUR</option>
+<option id="option" value="AMARAPURAM">AMARAPURAM</option>
+<option id="option" value="BATHALAPALLE">BATHALAPALLE</option>
+<option id="option" value="BUKKAPATNAM">BUKKAPATNAM</option>
+<option id="option" value="CHENNEKOTHAPALLI">CHENNEKOTHAPALLI</option>
+<option id="option" value="CHILAMATHUR">CHILAMATHUR</option>
+<option id="option" value="DHARMAVARAM">DHARMAVARAM</option>
+<option id="option" value="GANDLAPENTA">GANDLAPENTA</option>
+<option id="option" value="GORANTLA">GORANTLA</option>
+<option id="option" value="GUDIBANDA">GUDIBANDA</option>
+<option id="option" value="HINDUPUR">HINDUPUR</option>
+<option id="option" value="KADIRI">KADIRI</option>
+<option id="option" value="KANAGAPALLI">KANAGAPALLI</option>
+<option id="option" value="KOTHACHERUVU">KOTHACHERUVU</option>
+<option id="option" value="LEPAKSHI">LEPAKSHI</option>
+<option id="option" value="MADAKASIRA">MADAKASIRA</option>
+<option id="option" value="MUDIGUBBA">MUDIGUBBA</option>
+<option id="option" value="NALLACHERUVU">NALLACHERUVU</option>
+<option id="option" value="NALLAMADA">NALLAMADA</option>
+<option id="option" value="NAMBULAPULAKUNTA">NAMBULAPULAKUNTA</option>
+<option id="option" value="OUBULADEVARACHERUVU">OUBULADEVARACHERUVU</option>
+<option id="option" value="PARIGI">PARIGI</option>
+<option id="option" value="PENUKONDA">PENUKONDA</option>
+<option id="option" value="PUTTAPARTHI">PUTTAPARTHI</option>
+<option id="option" value="RAMAGIRI">RAMAGIRI</option>
+<option id="option" value="ROLLA">ROLLA</option>
+<option id="option" value="RODDAM">RODDAM</option>
+<option id="option" value="SOMMANDEPALLI">SOMMANDEPALLI</option>
+<option id="option" value="TADIMARRI">TADIMARRI</option>
+<option id="option" value="TALUPULA">TALUPULA</option>
+<option id="option" value="TANAKAL">TANAKAL</option>
+<option id="option" value="OTHER">OTHER</option>
         `;
     } else if (selectedDistrict === 'Ananthapur') {
         options = `
-            <option id="option" value="">--Select your Mandal--</option>
-            <option id="option" value="DHARMAVARAM">DHARMAVARAM</option>
-            <option id="option" value="BATHALAPALLE">BATHALAPALLE</option>
-            <option id="option" value="TADIMARRI">TADIMARRI</option>
-            <option id="option" value="MUDIGUBBA">MUDIGUBBA</option>
+            <option id="option" value="">--SELECT YOUR MANDAL--</option>
+<option id="option" value="ANANTAPUR">ANANTAPUR</option>
+<option id="option" value="ATMAKUR">ATMAKUR</option>
+<option id="option" value="BELUGUPPA">BELUGUPPA</option>
+<option id="option" value="BK SAMUDRAM">BK SAMUDRAM</option>
+<option id="option" value="BOMMANAHAL">BOMMANAHAL</option>
+<option id="option" value="BRAHMASAMUDRAM">BRAHMASAMUDRAM</option>
+<option id="option" value="D.HIREHAL">D.HIREHAL</option>
+<option id="option" value="GARLADINNE">GARLADINNE</option>
+<option id="option" value="GOOTY">GOOTY</option>
+<option id="option" value="GUMMAGATTA">GUMMAGATTA</option>
+<option id="option" value="GUNTAKAL">GUNTAKAL</option>
+<option id="option" value="KALYANDURG">KALYANDURG</option>
+<option id="option" value="KAMBADUR">KAMBADUR</option>
+<option id="option" value="KANEKAL">KANEKAL</option>
+<option id="option" value="KUDAIR">KUDAIR</option>
+<option id="option" value="KUNDURPI">KUNDURPI</option>
+<option id="option" value="NARPALA">NARPALA</option>
+<option id="option" value="PAMIDI">PAMIDI</option>
+<option id="option" value="PEDDAPAPPUR">PEDDAPAPPUR</option>
+<option id="option" value="PEDDAVADUGUR">PEDDAVADUGUR</option>
+<option id="option" value="PUTLURU">PUTLURU</option>
+<option id="option" value="RAPTADU">RAPTADU</option>
+<option id="option" value="RAYADURG">RAYADURG</option>
+<option id="option" value="SETTURU">SETTURU</option>
+<option id="option" value="SINGANAMALA">SINGANAMALA</option>
+<option id="option" value="TADPATRI">TADPATRI</option>
+<option id="option" value="URAVAKONDA">URAVAKONDA</option>
+<option id="option" value="VAJRAKARUR">VAJRAKARUR</option>
+<option id="option" value="VIDAPANAKAL">VIDAPANAKAL</option>
+<option id="option" value="YADIKI">YADIKI</option>
+<option id="option" value="YELLANUR">YELLANUR</option>
+<option id="option" value="OTHER">OTHER</option>
         `;
     }
-
     mandalSelect.innerHTML = options;
 }
-
 function Reset() {
     document.getElementById('student-name').value = '';
     document.getElementById('father-name').value = '';
     document.getElementById('gender').value = '';
     document.getElementById('aadhaar-number').value = '';
     document.getElementById('mobile-number').value = '';
-    document.getElementById('caste').value = '';
+    document.getElementById('category').value = '';
     document.getElementById('test-score').value = '';
     document.getElementById('district').value = '';
     document.getElementById('mandal').value = '';
     document.getElementById('dob').value = '';
     document.querySelector('input[name="email"]').value = '';
 }
-document.getElementById('student-form').addEventListener('submit', function(event) {
+document.getElementById('registrationForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    sendData();
 });
-function areFieldsFilled() {
-    const fields = [
-        'student-name', 'father-name', 'gender', 'aadhaar-number',
-        'mobile-number', 'caste', 'district', 'mandal', 'dob', 'email'
-    ];
-    return fields.every(id => document.getElementById(id).value.trim() !== '');
-}
-
-function validateCheckbox() {
-    const checkbox = document.querySelector('input[name="check"]');
-    const registerButton = document.querySelector('button[type="submit"]');
-    if (areFieldsFilled()) {
-        checkbox.disabled = false;
-        registerButton.disabled = !checkbox.checked;
-    } else {
-        checkbox.disabled = true;
-        registerButton.disabled = true;
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const checkBox = document.getElementById('check');
-
-    checkBox.addEventListener('change', function () {
-        if (checkBox.checked) {
-            validateCheckbox()
-        }
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('registrationForm');
-    const checkBox = document.getElementById('check');
-    const registerButton = document.getElementById('submit');
-
-    function areFieldsFilled() {
-        const fields = [
-            'student-name', 'father-name', 'gender', 'aadhaar-number',
-            'mobile-number', 'caste', 'district', 'mandal', 'dob', 'email'
-        ];
-        return fields.every(id => document.getElementById(id).value.trim() !== '');
-    }
-
-    function validateCheckbox() {
-        if (areFieldsFilled()) {
-            checkBox.disabled = false;
-            registerButton.disabled = !checkBox.checked;
-        } else {
-            checkBox.disabled = true;
-            registerButton.disabled = true;
-        }
-    }
-
-    form.addEventListener('input', validateCheckbox);
-    checkBox.addEventListener('change', function () {
-        registerButton.disabled = !checkBox.checked;
-    });
-});
-
 function sendData() {
     if (!document.querySelector('input[name="check"]').checked) {
         //alert('You must declare that the information is true and correct');
         return false;
     }
-    areFieldsFilled()
+    if (!areFieldsFilled()) {
+        return false;
+    }
     const data = {
         studentName: document.getElementById('student-name').value,
         fatherName: document.getElementById('father-name').value,
         gender: document.getElementById('gender').value,
         aadhaarNumber: document.getElementById('aadhaar-number').value,
         mobileNumber: document.getElementById('mobile-number').value,
-        caste: document.getElementById('caste').value,
+        caste: document.getElementById('category').value,
         testScore: document.getElementById('test-score').value,
         district: document.getElementById('district').value,
         mandal: document.getElementById('mandal').value,
@@ -154,29 +127,28 @@ function sendData() {
         .then(response => response.json())
         .then(data => {
         console.log('Success:', data);
+        document.getElementById('registrationForm').style.display = 'none';
+        document.getElementById('thankYouDialog').style.display = 'block';
+
+        // Navigate to the main page after 5 seconds
+        setTimeout(function () {
+            window.location.href = 'https://vadaanya.org/'; // Replace with the actual URL of your main page
+        }, 5000); // 5000 milliseconds = 5 seconds
     })
         .catch((error) => {
         console.error('Error:', error);
     });
-
-    alert('You are successfully registered with us Thank you!');
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    const checkbox = document.querySelector('input[name="check"]');
-    const fields = document.querySelectorAll('input[type="text"], input[type="email"], input[type="date"], select');
-    fields.forEach(field => field.addEventListener('input', validateCheckbox));
-    checkbox.addEventListener('change', validateCheckbox);
-    validateCheckbox(); // Initial check
-});
 function setCustomMessageStudent(input) {
     const value = input.value;
     const regex = /^[A-Za-z\s]{1,32}$/;
 
     if (input.validity.valueMissing) {
-        input.setCustomValidity('Enter Student Name');
+        input.setCustomValidity('Enter Student Name as per Aadhaar');
     } else if (!regex.test(value)) {
+        input.value='';
         input.setCustomValidity('Please enter alphabets only');
+
     } else {
         input.setCustomValidity('');
     }
@@ -186,8 +158,9 @@ function setCustomMessageFather(input) {
     const regex = /^[A-Za-z\s]{1,32}$/;
 
     if (input.validity.valueMissing) {
-        input.setCustomValidity('Enter Father Name');
+        input.setCustomValidity('Enter Father Name as per Aadhaar');
     } else if (!regex.test(value)) {
+        input.value='';
         input.setCustomValidity('Please enter alphabets only');
     } else {
         input.setCustomValidity('');
@@ -200,6 +173,7 @@ function setAadhaarMessage(input) {
     else if (input.validity.valueMissing) {
         input.setCustomValidity('Aadhaar Number must be exactly 12 digits');
     } else if (/[^0-9]/.test(input.value)) {
+        input.value='';
         input.setCustomValidity('Please enter numbers only');
     } else if (input.value.length < 12) {
         input.setCustomValidity('Please enter a valid 12 digit number');
@@ -211,11 +185,12 @@ function setMobileMessage(input) {
     const value = input.value.replace(/\s+/g, ''); // Remove any spaces
     const regex = /^\+91\d{10}$/;
     if(input.value ===''){
-        input.setCustomValidity('Enter Mobile Nuumber');
+        input.setCustomValidity('Enter Mobile Number');
     }
     else if (input.validity.valueMissing) {
         input.setCustomValidity('Enter a valid +91 followed by 10 digits Mobile Number');
     } else if (/[^0-9+]/.test(value)) {
+        input.value='';
         input.setCustomValidity('Please enter numbers only');
     } else if (!regex.test(value)) {
         if (value.length < 13) {
@@ -248,4 +223,20 @@ function setEmailMessage(input) {
     } else {
         input.setCustomValidity('');
     }
+}
+
+function areFieldsFilled() {
+    const fields = [
+        'student-name', 'father-name', 'gender', 'aadhaar-number',
+        'mobile-number', 'category', 'district', 'mandal', 'dob', 'email'
+    ];
+
+    return fields.every(id => {
+        const element = document.getElementById(id);
+        if (element.tagName === 'select') {
+            return element.options[element.selectedIndex].value.trim() !== '';
+        } else {
+            return element.value.trim() !== '';
+        }
+    });
 }
