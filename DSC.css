@@ -59,13 +59,10 @@
     height: 80px;
     box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
 }
-
-
 button:hover {
     background-color: #0080ff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .form-group button[type="reset"] {
     background-color: #ff8000;
     color: white;
@@ -74,7 +71,6 @@ button:hover {
     font-size: 16px;
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
-
 .form-group button[type="reset"]:hover {
     background-color:        #ff0000; /* Lighter color on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
@@ -93,16 +89,16 @@ button:hover {
     body{
         margin: 0;
         padding: 0;
-
     }
     #text{
         margin-top:10px;
         font-size:20px;
         color:cornflowerblue;
+        font-style:italic;
     }
-    /*.form-group label {
-        display:none;
-    }*/
+    .form-group label {
+        font-size:25px;
+    }
     .form-container {
         flex-direction: row;
         /*flex-wrap: wrap;*/
@@ -119,7 +115,6 @@ button:hover {
         width: 100%;
         box-sizing: border-box;
     }
-
     .form-group button {
         display: flex;
         justify-content: center;
@@ -149,15 +144,18 @@ button:hover {
     font-size: 16px;
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
-  
     .form-group button:nth-child(2) {
         display: none;
     }
-
     .form-group button[type="reset"] {
         background-color: orange;
         color: white;
         display:none;
+    }
+    .spanAadharid{
+        color:cornflowerblue;
+        font-size:8px;
+        font-style:italic;
     }
 }
 
@@ -203,6 +201,7 @@ nav ul li a:hover {
     margin-top:10px;
     font-size:25px;
     color:cornflowerblue;
+    font-style:italic;
 }
 .error-message {
     color: red;
@@ -238,6 +237,7 @@ button:disabled {
 .spanAadharid{
     color:cornflowerblue;
     font-size:20px;
+    font-style:italic;
 }
 .dialog {
     display: none;
@@ -245,5 +245,6 @@ button:disabled {
     border: 1px solid #ccc;
     background: #F9F9F9;
     text-align:center;
+    font-style:italic;
 }
 

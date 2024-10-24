@@ -182,24 +182,16 @@ function setAadhaarMessage(input) {
     }
 }
 function setMobileMessage(input) {
-    const value = input.value.replace(/\s+/g, ''); // Remove any spaces
-    const regex = /^\+91\d{10}$/;
-    if(input.value ===''){
+  if(input.value ===''){
         input.setCustomValidity('Enter Mobile Number');
     }
     else if (input.validity.valueMissing) {
-        input.setCustomValidity('Enter a valid +91 followed by 10 digits Mobile Number');
-    } else if (/[^0-9+]/.test(value)) {
+        input.setCustomValidity('Mobile Number must be exactly 10 digits');
+    } else if (/[^0-9]/.test(input.value)) {
         input.value='';
         input.setCustomValidity('Please enter numbers only');
-    } else if (!regex.test(value)) {
-        if (value.length < 13) {
-            input.setCustomValidity('Please enter a valid 10-digit Mobile Number after +91');
-        } else if (value.length > 13) {
-            input.setCustomValidity('Mobile Number must be exactly 10 digits after +91');
-        } else {
-            input.setCustomValidity('Please enter a valid format: +91 followed by 10 digits');
-        }
+    } else if (input.value.length < 10) {
+        input.setCustomValidity('Please enter a valid 10 digit number');
     } else {
         input.setCustomValidity('');
     }
