@@ -93,15 +93,16 @@ button:hover {
     body{
         margin: 0;
         padding: 0;
+
     }
     #text{
         margin-top:10px;
         font-size:20px;
         color:cornflowerblue;
     }
-    .form-group label {
-        font-size:20px;
-    }
+    /*.form-group label {
+        display:none;
+    }*/
     .form-container {
         flex-direction: row;
         /*flex-wrap: wrap;*/
@@ -148,7 +149,7 @@ button:hover {
     font-size: 16px;
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
-
+  
     .form-group button:nth-child(2) {
         display: none;
     }
