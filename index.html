@@ -11,21 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 <body>
-<nav style="
-    padding-top: 0;
-    padding-bottom: 0;">
-    <ul>
-        <li><img src="https://vadaanya.org/wp-content/uploads/2019/06/Logo.png" width="30" height="30" class="mainLogo"
-                 alt="Logo"></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Vadaanya</a></li>
-        <li><a href="#">Society</a></li>
-        <li><a href="#">Team Vadaanya</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Donate</a></li>
-    </ul>
-</nav>
+<div class="dialog" id="thankYouDialog">
+    <p>Thank you for registering. We will share further updates to your email ID and mobile number.</p>
+</div>
 <form class="form-wrapper" onsubmit="return sendData()" id="registrationForm">
     <header class="header">
         <h1>DSC(SGT) MEGA GRAND TEST - 2024</h1>
@@ -52,26 +40,27 @@
                 <option value="">-- Choose your Gender --</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
+                <option value="Other">Other</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="aadhaar-number">Aadhaar Number <span class="asterisk">*</span></label>
-            <input type="text" id="aadhaar-number" name="aadhaar-number" maxlength="12" placeholder="1234 5678 9012"
+            <label for="aadhaar-number">Aadhaar Number <span class="asterisk">*</span><span class="spanAadharid">(Mandatory to carry to the exam center for physical verification)</span></label>
+            <input type="text" id="aadhaar-number" name="aadhaar-number" maxlength="12" placeholder="XXXX XXXX XXXX"
                    required
                    oninvalid="setAadhaarMessage(this)"
                    oninput="setAadhaarMessage(this)">
         </div>
         <div class="form-group">
             <label for="mobile-number">Mobile Number <span class="asterisk">*</span></label>
-            <input type="text" id="mobile-number" name="mobile-number" placeholder=" +91 9876543210" required
+            <input type="text" id="mobile-number" name="mobile-number" placeholder=" +91 0000000000" required
                    oninvalid="setMobileMessage(this)"
                    oninput="setMobileMessage(this)">
         </div>
         <div class="form-group">
-            <label for="caste">Caste <span class="asterisk">*</span></label>
-            <select id="caste" name="caste" required oninvalid="this.setCustomValidity('Select your caste')"
+            <label for="category">Category <span class="asterisk">*</span></label>
+            <select id="category" name="category" required oninvalid="this.setCustomValidity('Select your category')"
                     oninput="this.setCustomValidity('')">
-                <option value="">-- Select your caste --</option>
+                <option value="">-- Select your category --</option>
                 <option value="OC">OC</option>
                 <option value="BC-A">BC-A</option>
                 <option value="BC-B">BC-B</option>
@@ -81,14 +70,15 @@
                 <option value="SC">SC</option>
                 <option value="ST">ST</option>
                 <option value="SC">SC</option>
+                <option value="OTHER">OTHER</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="test-score">Previous Test Score</label>
-            <input type="text" id="test-score" name="test-score" placeholder="Previous Test Score">
+            <label for="test-score">Previous TET Score</label>
+            <input type="text" id="test-score" name="test-score" placeholder="Previous Tet Score">
         </div>
         <div class="form-group">
-            <label for="district">District <span class="asterisk">*</span></label>
+            <label for="district">District <span class="asterisk">*</span><span class="spanAadharid">(Only applicants based out of Sri Satya Sai and  Anantapur districts eligible)</span></label>
             <select id="district" name="district" onchange="updateMandalOptions()" required
                     oninvalid="this.setCustomValidity('Choose your District')" oninput="this.setCustomValidity('')">
                 <option value="">-- Select your district --</option>
@@ -125,8 +115,10 @@
             <input type="checkbox" id="check" name="check" required
                    oninvalid="this.setCustomValidity('Check it ')"
                    oninput="this.setCustomValidity('')">
-            <label for="check" class="text">I hereby declare that the above information provided is true and
-                correct.</label>
+            <label for="check" class="text" id="text">Please make sure the details provided are correct as further
+                updates will be
+                shared to email ID and mobile number.</label>
+
         </div>
     </div>
     <div class="btn-container">
