@@ -196,23 +196,31 @@ function setMobileMessage(input) {
         input.setCustomValidity('');
     }
 }
+function setTetMessage(input) {
+    if (/[^0-9]/.test(input.value)) {
+        input.value = '';
+        input.setCustomValidity('Please enter numbers only');
+    } else {
+        input.setCustomValidity('');
+    }
+}
+
 function setEmailMessage(input) {
     const value = input.value;
-    const regex = /^[a-z0-9._%+-]+@gmail\.com$/;
+    //const regex = /^[a-z0-9._%+-]+@gmail\.com$/;
     const atSymbol = value.includes('@');
     const domain = value.endsWith('@gmail.com');
     if(input.value ===''){
         input.setCustomValidity('Enter gmail address');
     }
     else if (input.validity.valueMissing) {
-        input.setCustomValidity('Please enter a valid gmail address ending with @gmail.com');
+        input.setCustomValidity('Please enter a email address');
     } else if (!atSymbol) {
         input.setCustomValidity('Please enter a valid email address like abc@gmail.com');
     } else if (!domain) {
-        input.setCustomValidity('Please enter a valid gmail address ending with @gmail.com');
-    } else if (!regex.test(value)) {
-        input.setCustomValidity('Please enter a valid format: abc@gmail.com');
-    } else {
+        input.setCustomValidity('Please enter a valid email address ending with @gmail.com');
+    }
+    else {
         input.setCustomValidity('');
     }
 }
