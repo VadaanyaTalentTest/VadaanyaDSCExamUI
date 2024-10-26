@@ -1,5 +1,5 @@
 //--Validation for student name field--
-function setCustomMessageStudent(input) {
+function dscsetCustomMessageStudent(input) {
     const value = input.value;
     const regex = /^[A-Za-z\s]{1,32}$/;
 
@@ -8,13 +8,12 @@ function setCustomMessageStudent(input) {
     } else if (!regex.test(value)) {
         input.value='';
         input.setCustomValidity('Please enter alphabets only');
-
     } else {
         input.setCustomValidity('');
     }
 }
 //--Validation for father name field--
-function setCustomMessageFather(input) {
+function dscsetCustomMessageFather(input) {
     const value = input.value;
     const regex = /^[A-Za-z\s]{1,32}$/;
 
@@ -28,7 +27,7 @@ function setCustomMessageFather(input) {
     }
 }
 //--Validation for Aadhaar field--
-function setAadhaarMessage(input) {
+function dscsetAadhaarMessage(input) {
     if(input.value ===''){
         input.setCustomValidity('Enter Aadhaar Number');
     }
@@ -44,7 +43,7 @@ function setAadhaarMessage(input) {
     }
 }
 //--Validation for Mobile field--
-function setMobileMessage(input) {
+function dscsetMobileMessage(input) {
     if(input.value ===''){
         input.setCustomValidity('Enter Mobile Number');
     }
@@ -60,7 +59,7 @@ function setMobileMessage(input) {
     }
 }
 //--Validation for Tet field--
-function setTetMessage(input) {
+function dscsetTetMessage(input) {
     if (/[^0-9]/.test(input.value) || input.value > 150) {
         input.value = '';
         input.setCustomValidity('Please enter a number between 1 and 150');
@@ -69,9 +68,9 @@ function setTetMessage(input) {
     }
 }
 //--Validation for District field--
-function updateMandalOptions() {
-    const mandalSelect = document.getElementById('mandal');
-    const selectedDistrict = document.getElementById('district').value;
+function dscupdateMandalOptions() {
+    const mandalSelect = document.getElementById('dsc-mandal');
+    const selectedDistrict = document.getElementById('dsc-district').value;
     let options = '';
     if (selectedDistrict === 'Sri Sathya Sai') {
         options = `
@@ -152,10 +151,10 @@ function updateMandalOptions() {
 //--Validation for DOB field--
 let today = new Date();
 today.setDate(today.getDate() - 1);
-document.getElementById('dob').max = today.toISOString().split('T')[0];
+document.getElementById('dsc-dob').max = today.toISOString().split('T')[0];
 
 //--Validation for Email field--
-function setEmailMessage(input) {
+function dscsetEmailMessage(input) {
     const value = input.value;
     //const regex = /^[a-z0-9._%+-]+@gmail\.com$/;
     const atSymbol = value.includes('@');
@@ -176,23 +175,23 @@ function setEmailMessage(input) {
 }
 //--Validation for Reset btn--
 function Reset() {
-    document.getElementById('student-name').value = '';
-    document.getElementById('father-name').value = '';
-    document.getElementById('gender').value = '';
-    document.getElementById('aadhaar-number').value = '';
-    document.getElementById('mobile-number').value = '';
-    document.getElementById('category').value = '';
-    document.getElementById('test-score').value = '';
-    document.getElementById('district').value = '';
-    document.getElementById('mandal').value = '';
-    document.getElementById('dob').value = '';
+    document.getElementById('dsc-student-name').value = '';
+    document.getElementById('dsc-father-name').value = '';
+    document.getElementById('dsc-gender').value = '';
+    document.getElementById('dsc-aadhaar-number').value = '';
+    document.getElementById('dsc-mobile-number').value = '';
+    document.getElementById('dsc-category').value = '';
+    document.getElementById('dsc-test-score').value = '';
+    document.getElementById('dsc-district').value = '';
+    document.getElementById('dsc-mandal').value = '';
+    document.getElementById('dsc-dob').value = '';
     document.querySelector('input[name="email"]').value = '';
 }
 //--Validation for Register btn--
-function areFieldsFilled() {
+function dscareFieldsFilled() {
     const fields = [
-        'student-name', 'father-name', 'gender', 'aadhaar-number',
-        'mobile-number', 'category', 'district', 'mandal', 'dob', 'email'
+        'dsc-student-name', 'dsc-father-name', 'dsc-gender', 'dsc-aadhaar-number',
+        'dsc-mobile-number', 'dsc-category', 'dsc-district', 'dsc-mandal', 'dsc-dob', 'dsc-email'
     ];
 
     return fields.every(id => {
@@ -205,14 +204,14 @@ function areFieldsFilled() {
     });
 }
 
-document.getElementById('registrationForm').addEventListener('submit', function (event) {
+document.getElementById('dsc-registrationForm').addEventListener('submit', function (event) {
     event.preventDefault();
-    sendData();
+    dscsendData();
 });
 
-function sendData() {
-    const submitBtn = document.getElementById('submitBtn');
-    if (!areFieldsFilled()) {
+function dscsendData() {
+    const submitBtn = document.getElementById('dsc-submitBtn');
+    if (!dscareFieldsFilled()) {
         alert('Please fill all the required fields.');
         return false;
     }
@@ -227,17 +226,17 @@ function sendData() {
     submitBtn.disabled = true;
 
     const data = {
-        studentName: document.getElementById('student-name').value,
-        fatherName: document.getElementById('father-name').value,
-        gender: document.getElementById('gender').value,
-        aadhaarNumber: document.getElementById('aadhaar-number').value,
-        mobileNumber: document.getElementById('mobile-number').value,
-        caste: document.getElementById('category').value,
-        testScore: document.getElementById('test-score').value,
-        district: document.getElementById('district').value,
-        mandal: document.getElementById('mandal').value,
-        dob: document.getElementById('dob').value,
-        email: document.getElementById('email').value,
+        studentName: document.getElementById('dsc-student-name').value,
+        fatherName: document.getElementById('dsc-father-name').value,
+        gender: document.getElementById('dsc-gender').value,
+        aadhaarNumber: document.getElementById('dsc-aadhaar-number').value,
+        mobileNumber: document.getElementById('dsc-mobile-number').value,
+        caste: document.getElementById('dsc-category').value,
+        testScore: document.getElementById('dsc-test-score').value,
+        district: document.getElementById('dsc-district').value,
+        mandal: document.getElementById('dsc-mandal').value,
+        dob: document.getElementById('dsc-dob').value,
+        email: document.getElementById('dsc-email').value,
     };
 
     fetch('https://vadaanyadscapi.azurewebsites.net/StudentDetails', {
@@ -250,8 +249,8 @@ function sendData() {
         .then(response => response.json())
         .then(data => {
         console.log('Success:', data);
-        document.getElementById('registrationForm').style.display = 'none';
-        document.getElementById('thankYouDialog').style.display = 'block';
+        document.getElementById('dsc-registrationForm').style.display = 'none';
+        document.getElementById('dsc-thankYouDialog').style.display = 'block';
 
         // Navigate to the main page after 5 seconds
         setTimeout(function () {

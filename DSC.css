@@ -1,4 +1,4 @@
-.form-container {
+.dsc-form-container {
     display: flex;
     /*flex-direction: column;*/
     flex-wrap: wrap;
@@ -11,7 +11,7 @@
     background-color: #F9F7ED;
 }
 
-.btn-container {
+.dsc-btn-container {
     display: flex;
     /*flex-direction: column;*/
     flex-wrap: wrap;
@@ -21,19 +21,19 @@
     padding: 30px;
 }
 
-.form-group {
+.dsc-form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
     width: 48%;
 }
 
-.form-group label {
+.dsc-form-group label {
     margin-bottom: 5px;
     font-size: 30px;
 }
 
-.form-group input, .form-group select {
+.dsc-form-group input, .dsc-form-group select {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 7px;
@@ -43,7 +43,7 @@
     font-size: 20px;
 }
 
-.form-group button {
+.dsc-form-group button {
     margin: 0 auto;
     border-radius: 15px;
     width: 100%;
@@ -60,7 +60,7 @@
     box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
     font-style:italic;
 }
-.form-group button[type="reset"] {
+.dsc-form-group button[type="reset"] {
     background-color: #ff8000;
     color: white;
     border: none;
@@ -73,36 +73,32 @@ button:hover {
     background-color: #0080ff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.form-group button[type="reset"]:hover {
+.dsc-form-group button[type="reset"]:hover {
     background-color:        #ff0000; /* Lighter color on hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }
-.header {
+.dsc-header {
     text-align: center; /* Center the header */
     color: yellow; /* Set background color to yellow */
     padding: 20px; /* Add some padding for better spacing */
 }
 
-.header h1 {
+.dsc-header h1 {
     margin: 0; /* Remove default margin */
     color: green; /* Set text color to black for contrast */
 }
-#dummy{
+#dsc-dummy{
     visibility:hidden;
 }
-.text{
+.dsc-text{
     margin-top:10px;
     font-size:25px;
     color:cornflowerblue;
     font-style:italic;
 }
-.error-message {
-    color: red;
-    font-size: 12px;
-}
-.asterisk{
+.dsc-asterisk{
     color:red;
-}.form
+}.dsc-form
 /* Increase the size of the input field */
 input[type="date"] {
     padding: 10px;
@@ -122,61 +118,62 @@ button:disabled {
     background-color: #0080ff;
     cursor: not-allowed;
 }
-.spanAadharid{
+.dsc-spanAadharid{
     color:cornflowerblue;
     font-size:20px;
     font-style:italic;
 }
-.dialog {
+.dsc-dialog {
     display: none;
     padding: 20px;
     border: 1px solid #ccc;
-    background: #F9F9F9;
+    background: #F9F7ED;
     text-align:center;
     font-style:italic;
+    color:green;
 }
 @media (min-width: 375px) and (max-width: 667px) {
     body{
         margin: 0;
         padding: 0;
     }
-    #text{
+    #dsc-text{
         margin-top:10px;
         font-size:15px;
         color:cornflowerblue;
         font-style:italic;
-    }  .spanAadharid {
+    }  .dsc-spanAadharid {
         color:cornflowerblue;
         font-size:15px;
         font-style:italic;
     }
-    .form-group label {
+    .dsc-form-group label {
         font-size:25px;
     }
-    .form-container {
+    .dsc-form-container {
         flex-direction: row;
         /*flex-wrap: wrap;*/
         width: 80%;   }
-    .header h1 {
+    .dsc-header h1 {
         margin: 0; /* Remove default margin */
         color: green; /* Set text color to black for contrast */
         font-size:18px;
     }
-    .form-group input, .form-group select,.form-group select option{
+    .dsc-form-group input, .dsc-form-group select,.dsc-form-group select option{
         padding: 10px;
         border: 1px solid #ddd;
         border-radius: 7px;
         width: 100%;
         box-sizing: border-box;
     }
-    #dummy{
+    #dsc-dummy{
         display:none;
     }
-    .form-group {
+    .dsc-form-group {
         flex: 1 1 48%;
         margin-right: 4%;
         width: 50vw;
-    }.form-group button {
+    }.dsc-form-group button {
     width: 88%;
     height:50px;
     background-color: green; /* Initial button color */
@@ -191,10 +188,10 @@ button:disabled {
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
          box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
 }
-    .form-group button:nth-child(2) {
+    .dsc-form-group button:nth-child(2) {
         display: none;
     }
-    .form-group button[type="reset"] {
+    .dsc-form-group button[type="reset"] {
         background-color: orange;
         color: white;
         display:none;
