@@ -87,6 +87,54 @@ button:hover {
     margin: 0; /* Remove default margin */
     color: green; /* Set text color to black for contrast */
 }
+#dummy{
+    visibility:hidden;
+}
+.text{
+    margin-top:10px;
+    font-size:25px;
+    color:cornflowerblue;
+    font-style:italic;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+.asterisk{
+    color:red;
+}.form
+/* Increase the size of the input field */
+input[type="date"] {
+    padding: 10px;
+    font-size: 18px; /* Increase font size */
+    height: 50px; /* Increase height */
+    border-radius: 7px;
+    border: 1px solid #ddd;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Increase the size of the calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    font-size: 24px; /* Increase icon size */
+}
+button:disabled {
+    background-color: #0080ff;
+    cursor: not-allowed;
+}
+.spanAadharid{
+    color:cornflowerblue;
+    font-size:20px;
+    font-style:italic;
+}
+.dialog {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #F9F9F9;
+    text-align:center;
+    font-style:italic;
+}
 @media (min-width: 375px) and (max-width: 667px) {
     body{
         margin: 0;
@@ -96,6 +144,10 @@ button:hover {
         margin-top:10px;
         font-size:15px;
         color:cornflowerblue;
+        font-style:italic;
+    }  .spanAadharid {
+        color:cornflowerblue;
+        font-size:15px;
         font-style:italic;
     }
     .form-group label {
@@ -151,58 +203,7 @@ button:hover {
     background-color: #0080ff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }*/
-    .spanAadharid text{
-        color:cornflowerblue;
-        font-size:15px;
-        font-style:italic;
-    }
-}
-#dummy{
-    visibility:hidden;
-}
-.text{
-    margin-top:10px;
-    font-size:25px;
-    color:cornflowerblue;
-    font-style:italic;
-}
-.error-message {
-    color: red;
-    font-size: 12px;
-}
-.asterisk{
-    color:red;
-}.form
-/* Increase the size of the input field */
-input[type="date"] {
-    padding: 10px;
-    font-size: 18px; /* Increase font size */
-    height: 50px; /* Increase height */
-    border-radius: 7px;
-    border: 1px solid #ddd;
-    width: 100%;
-    box-sizing: border-box;
+
 }
 
-/* Increase the size of the calendar icon */
-input[type="date"]::-webkit-calendar-picker-indicator {
-    font-size: 24px; /* Increase icon size */
-}
-button:disabled {
-    background-color: #0080ff;
-    cursor: not-allowed;
-}
-.spanAadharid{
-    color:cornflowerblue;
-    font-size:20px;
-    font-style:italic;
-}
-.dialog {
-    display: none;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background: #F9F9F9;
-    text-align:center;
-    font-style:italic;
-}
 
