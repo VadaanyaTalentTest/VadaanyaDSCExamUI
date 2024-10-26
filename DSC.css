@@ -54,22 +54,24 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 35px;
     transition: background-color 0.3s, box-shadow 0.3s;
     height: 80px;
     box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
-}
-button:hover {
-    background-color: #0080ff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-style:italic;
 }
 .form-group button[type="reset"] {
     background-color: #ff8000;
     color: white;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 35px;
+    font-style:italic;
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+button:hover {
+    background-color: #0080ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .form-group button[type="reset"]:hover {
     background-color:        #ff0000; /* Lighter color on hover */
@@ -92,7 +94,7 @@ button:hover {
     }
     #text{
         margin-top:10px;
-        font-size:20px;
+        font-size:15px;
         color:cornflowerblue;
         font-style:italic;
     }
@@ -115,15 +117,6 @@ button:hover {
         width: 100%;
         box-sizing: border-box;
     }
-    .form-group button {
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 15px;
-        width: 28%;
-    }
     #dummy{
         display:none;
     }
@@ -141,8 +134,10 @@ button:hover {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 25px;
+        font-style:italic;
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+         box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
 }
     .form-group button:nth-child(2) {
         display: none;
@@ -152,47 +147,15 @@ button:hover {
         color: white;
         display:none;
     }
-    .spanAadharid{
+     /*  .form-group button:hover {
+    background-color: #0080ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}*/
+    .spanAadharid text{
         color:cornflowerblue;
-        font-size:8px;
+        font-size:15px;
         font-style:italic;
     }
-}
-
-nav {
-    background-color: #36622B;
-}
-
-nav ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Distribute space between items */
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li img.mainLogo {
-    width: 1000px;
-    height: 100px; /* Adjust the height as needed */
-    flex: 0; /* Prevent the image from stretching */
-    float: left;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    display: block;
-    text-align: center; /* Center the text within the list items */
-}
-
-nav ul li a:hover {
-    background-color: #5cbf9a;
 }
 #dummy{
     visibility:hidden;
@@ -210,11 +173,6 @@ nav ul li a:hover {
 .asterisk{
     color:red;
 }.form
-/*-group input:focus,
-.form-group select:focus {
-    background-color: #FFFFE0;
-}*/
-
 /* Increase the size of the input field */
 input[type="date"] {
     padding: 10px;

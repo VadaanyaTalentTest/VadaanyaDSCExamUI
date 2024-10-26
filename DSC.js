@@ -197,14 +197,13 @@ function setMobileMessage(input) {
     }
 }
 function setTetMessage(input) {
-    if (/[^0-9]/.test(input.value)) {
+    if (/[^0-9]/.test(input.value) || input.value > 100) {
         input.value = '';
-        input.setCustomValidity('Please enter numbers only');
+        input.setCustomValidity('Please enter a number between 1 and 100');
     } else {
         input.setCustomValidity('');
     }
 }
-
 function setEmailMessage(input) {
     const value = input.value;
     //const regex = /^[a-z0-9._%+-]+@gmail\.com$/;
