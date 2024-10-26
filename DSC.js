@@ -1,3 +1,74 @@
+//--Validation for student name field--
+function setCustomMessageStudent(input) {
+    const value = input.value;
+    const regex = /^[A-Za-z\s]{1,32}$/;
+
+    if (input.validity.valueMissing) {
+        input.setCustomValidity('Enter Student Name as per Aadhaar');
+    } else if (!regex.test(value)) {
+        input.value='';
+        input.setCustomValidity('Please enter alphabets only');
+
+    } else {
+        input.setCustomValidity('');
+    }
+}
+//--Validation for father name field--
+function setCustomMessageFather(input) {
+    const value = input.value;
+    const regex = /^[A-Za-z\s]{1,32}$/;
+
+    if (input.validity.valueMissing) {
+        input.setCustomValidity('Enter Father Name as per Aadhaar');
+    } else if (!regex.test(value)) {
+        input.value='';
+        input.setCustomValidity('Please enter alphabets only');
+    } else {
+        input.setCustomValidity('');
+    }
+}
+//--Validation for Aadhaar field--
+function setAadhaarMessage(input) {
+    if(input.value ===''){
+        input.setCustomValidity('Enter Aadhaar Number');
+    }
+    else if (input.validity.valueMissing) {
+        input.setCustomValidity('Aadhaar Number must be exactly 12 digits');
+    } else if (/[^0-9]/.test(input.value)) {
+        input.value='';
+        input.setCustomValidity('Please enter numbers only');
+    } else if (input.value.length < 12) {
+        input.setCustomValidity('Please enter a valid 12 digit number');
+    } else {
+        input.setCustomValidity('');
+    }
+}
+//--Validation for Mobile field--
+function setMobileMessage(input) {
+    if(input.value ===''){
+        input.setCustomValidity('Enter Mobile Number');
+    }
+    else if (input.validity.valueMissing) {
+        input.setCustomValidity('Mobile Number must be exactly 10 digits');
+    } else if (/[^0-9]/.test(input.value)) {
+        input.value='';
+        input.setCustomValidity('Please enter numbers only');
+    } else if (input.value.length < 10) {
+        input.setCustomValidity('Please enter a valid 10 digit number');
+    } else {
+        input.setCustomValidity('');
+    }
+}
+//--Validation for Tet field--
+function setTetMessage(input) {
+    if (/[^0-9]/.test(input.value) || input.value > 150) {
+        input.value = '';
+        input.setCustomValidity('Please enter a number between 1 and 150');
+    } else {
+        input.setCustomValidity('');
+    }
+}
+//--Validation for District field--
 function updateMandalOptions() {
     const mandalSelect = document.getElementById('mandal');
     const selectedDistrict = document.getElementById('district').value;
@@ -78,6 +149,32 @@ function updateMandalOptions() {
     }
     mandalSelect.innerHTML = options;
 }
+//--Validation for DOB field--
+let today = new Date();
+today.setDate(today.getDate() - 1);
+document.getElementById('dob').max = today.toISOString().split('T')[0];
+
+//--Validation for Email field--
+function setEmailMessage(input) {
+    const value = input.value;
+    //const regex = /^[a-z0-9._%+-]+@gmail\.com$/;
+    const atSymbol = value.includes('@');
+    const domain = value.endsWith('.com');
+    if(input.value ===''){
+        input.setCustomValidity('Enter gmail address');
+    }
+    else if (input.validity.valueMissing) {
+        input.setCustomValidity('Please enter a email address');
+    } else if (!atSymbol) {
+        input.setCustomValidity('Please enter a valid email address like abc@gmail.com');
+    } else if (!domain) {
+        input.setCustomValidity('Please enter a valid email address ending with .com');
+    }
+    else {
+        input.setCustomValidity('');
+    }
+}
+//--Validation for Reset btn--
 function Reset() {
     document.getElementById('student-name').value = '';
     document.getElementById('father-name').value = '';
@@ -91,16 +188,36 @@ function Reset() {
     document.getElementById('dob').value = '';
     document.querySelector('input[name="email"]').value = '';
 }
+//--Validation for Register btn--
+function areFieldsFilled() {
+    const fields = [
+        'student-name', 'father-name', 'gender', 'aadhaar-number',
+        'mobile-number', 'category', 'district', 'mandal', 'dob', 'email'
+    ];
+
+    return fields.every(id => {
+        const element = document.getElementById(id);
+        if (element.tagName === 'SELECT') {
+            return element.options[element.selectedIndex].value.trim() !== '';
+        } else {
+            return element.value.trim() !== '';
+        }
+    });
+}
+
 document.getElementById('registrationForm').addEventListener('submit', function (event) {
     event.preventDefault();
     sendData();
 });
+
 function sendData() {
-    if (!document.querySelector('input[name="check"]').checked) {
-        //alert('You must declare that the information is true and correct');
+
+    if (!areFieldsFilled()) {
+        alert('Please fill all the required fields.');
         return false;
     }
-    if (!areFieldsFilled()) {
+    if (!document.querySelector('input[name="check"]').checked) {
+        //alert('You must declare that the information is true and correct');
         return false;
     }
     const data = {
@@ -137,105 +254,5 @@ function sendData() {
     })
         .catch((error) => {
         console.error('Error:', error);
-    });
-}
-function setCustomMessageStudent(input) {
-    const value = input.value;
-    const regex = /^[A-Za-z\s]{1,32}$/;
-
-    if (input.validity.valueMissing) {
-        input.setCustomValidity('Enter Student Name as per Aadhaar');
-    } else if (!regex.test(value)) {
-        input.value='';
-        input.setCustomValidity('Please enter alphabets only');
-
-    } else {
-        input.setCustomValidity('');
-    }
-}
-function setCustomMessageFather(input) {
-    const value = input.value;
-    const regex = /^[A-Za-z\s]{1,32}$/;
-
-    if (input.validity.valueMissing) {
-        input.setCustomValidity('Enter Father Name as per Aadhaar');
-    } else if (!regex.test(value)) {
-        input.value='';
-        input.setCustomValidity('Please enter alphabets only');
-    } else {
-        input.setCustomValidity('');
-    }
-}
-function setAadhaarMessage(input) {
-    if(input.value ===''){
-        input.setCustomValidity('Enter Aadhaar Number');
-    }
-    else if (input.validity.valueMissing) {
-        input.setCustomValidity('Aadhaar Number must be exactly 12 digits');
-    } else if (/[^0-9]/.test(input.value)) {
-        input.value='';
-        input.setCustomValidity('Please enter numbers only');
-    } else if (input.value.length < 12) {
-        input.setCustomValidity('Please enter a valid 12 digit number');
-    } else {
-        input.setCustomValidity('');
-    }
-}
-function setMobileMessage(input) {
-  if(input.value ===''){
-        input.setCustomValidity('Enter Mobile Number');
-    }
-    else if (input.validity.valueMissing) {
-        input.setCustomValidity('Mobile Number must be exactly 10 digits');
-    } else if (/[^0-9]/.test(input.value)) {
-        input.value='';
-        input.setCustomValidity('Please enter numbers only');
-    } else if (input.value.length < 10) {
-        input.setCustomValidity('Please enter a valid 10 digit number');
-    } else {
-        input.setCustomValidity('');
-    }
-}
-function setTetMessage(input) {
-    if (/[^0-9]/.test(input.value) || input.value > 100) {
-        input.value = '';
-        input.setCustomValidity('Please enter a number between 1 and 100');
-    } else {
-        input.setCustomValidity('');
-    }
-}
-function setEmailMessage(input) {
-    const value = input.value;
-    //const regex = /^[a-z0-9._%+-]+@gmail\.com$/;
-    const atSymbol = value.includes('@');
-    const domain = value.endsWith('@gmail.com');
-    if(input.value ===''){
-        input.setCustomValidity('Enter gmail address');
-    }
-    else if (input.validity.valueMissing) {
-        input.setCustomValidity('Please enter a email address');
-    } else if (!atSymbol) {
-        input.setCustomValidity('Please enter a valid email address like abc@gmail.com');
-    } else if (!domain) {
-        input.setCustomValidity('Please enter a valid email address ending with @gmail.com');
-    }
-    else {
-        input.setCustomValidity('');
-    }
-}
-
-function areFieldsFilled() {
-    const fields = [
-        'student-name', 'father-name', 'gender', 'aadhaar-number',
-        'mobile-number', 'category', 'district', 'mandal', 'dob', 'email'
-    ];
-
-    return fields.every(id => {
-        const element = document.getElementById(id);
-        if (element.tagName === 'select') {
-            return element.options[element.selectedIndex].value.trim() !== '';
-        } else {
-            return element.value.trim() !== '';
-        }
     });
 }
