@@ -211,15 +211,21 @@ document.getElementById('registrationForm').addEventListener('submit', function 
 });
 
 function sendData() {
-
+    const submitBtn = document.getElementById('submitBtn');
     if (!areFieldsFilled()) {
         alert('Please fill all the required fields.');
         return false;
     }
     if (!document.querySelector('input[name="check"]').checked) {
-        //alert('You must declare that the information is true and correct');
+        //alert('Please make sure the details provided are correct as further
+        //                updates will be
+        //                shared to email ID and mobile number.');
         return false;
     }
+
+    // Disable the submit button to prevent multiple clicks
+    submitBtn.disabled = true;
+
     const data = {
         studentName: document.getElementById('student-name').value,
         fatherName: document.getElementById('father-name').value,
@@ -254,5 +260,7 @@ function sendData() {
     })
         .catch((error) => {
         console.error('Error:', error);
+        // Re-enable the submit button if there's an error
+        submitBtn.disabled = false;
     });
 }
