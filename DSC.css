@@ -27,7 +27,7 @@
 }
 .dsc-form-group label {
     /* margin-bottom: 5px; */
-    font-size: 30px;
+    font-size: x-large;
 }
 .dsc-form-group input, .dsc-form-group select {
     padding: 10px;
@@ -78,7 +78,6 @@ button:hover {
     padding: 10px; /* Add some padding for better spacing */
 }
 .dsc-header h1 {
- font-size:x-large;
     margin: 0; /* Remove default margin */
     color: green; /* Set text color to black for contrast */
 }
@@ -120,8 +119,17 @@ button:disabled {
     font-style:italic;
     color:green;
 }
+        label span {
+    display: inline-block !important;
+    font-weight: 500 !important;
+    -webkit-transform: translateX(20px)!important;
+    -ms-transform: translateX(20px);
+    transform: translateX(20px)!important;
+    opacity: 0!important;
+    visibility: hidden!important;
+}
 /*---------------------------------*/
-@media (min-width:275px) and (max-width:991px){
+@media (min-width:275px) and (max-width:650px){
     body {
         margin: 0;
         padding: 0;
