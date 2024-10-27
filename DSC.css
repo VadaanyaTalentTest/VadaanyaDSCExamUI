@@ -10,7 +10,6 @@
     border-radius: 15px;
     background-color: #F9F7ED;
 }
-
 .dsc-btn-container {
     display: flex;
     /*flex-direction: column;*/
@@ -20,19 +19,16 @@
     margin: 0 auto;
     padding: 30px;
 }
-
 .dsc-form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
     width: 48%;
 }
-
 .dsc-form-group label {
     /* margin-bottom: 5px; */
     font-size: 30px;
 }
-
 .dsc-form-group input, .dsc-form-group select {
     padding: 10px;
     border: 1px solid #ddd;
@@ -42,7 +38,6 @@
     height:50px;
     font-size: 100%;
 }
-
 .dsc-form-group button {
     margin: 0 auto;
     border-radius: 15px;
@@ -118,7 +113,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 button:disabled {
     background-color: #0080ff;
     cursor: not-allowed;
-}
+
 .dsc-dialog {
     display: none;
     padding: 20px;
@@ -134,22 +129,25 @@ button:disabled {
         margin: 0;
         padding: 0;
     }
-    #dsc-text {
+    #dsc-text{
         margin-top: 0px;
-        font-size: 15px;
-        color: cornflowerblue;
-        font-style: italic;
+        font-size:15px;
+        color:cornflowerblue;
+        font-style:italic;
     }
     .dsc-form-group label {
         font-size: x-large;
     }
+    .dsc-form-group label span{
+		/* visibility:visible; */
+	}
     .dsc-form-container {
         flex-direction: row;
         width: 80%;
     }
     .dsc-header h1 {
-        margin: 0;
-        color: green;
+        margin: 0; /* Remove default margin */
+        color: green; /* Set text color to black for contrast */
         font-size: 100%;
     }
     .dsc-form-group input, .dsc-form-group select, .dsc-form-group select option {
@@ -167,22 +165,31 @@ button:disabled {
  #dsc-dummy{
         display:none;
     }
-.dsc-form-group button{
-width:100%;
-height:100%;
-background-color:green;
-color:white;
-border:none;
-padding:10px 20px;
-text-align:center;
-text-decoration:none;
-display:inline-block;
-font-size:25px;
-font-style:italic;
-transition:background-color 0.3s,box-shadow 0.3s;
-box-shadow:0 14px 18px  rgba(0,0,0,0.5);
+    .dsc-form-group {
+        flex: 1 1 48%;
+        margin-right: 4%;
+        width: 50vw;
+    }.dsc-form-group button {
+    width: 100%;
+    height: 100%;
+    background-color: green; /* Initial button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    font-style:italic;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+    box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
 }
-.dsc-form-group button[type="reset"]{
-	display:none;
-}
+    .dsc-form-group button:nth-child(2) {
+        display: none;
+    }
+    .dsc-form-group button[type="reset"] {
+        background-color: orange;
+        color: white;
+        display:none;
+    }
 }
