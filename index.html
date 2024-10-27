@@ -47,7 +47,7 @@
             </select>
         </div>
         <div class="dsc-form-group">
-            <label for="dsc-aadhaar-number">Aadhaar Number <span class="dsc-asterisk">*</span><span class="dsc-spanAadharid">(Mandatory to carry to the exam center for physical verification)</span></label>
+            <label for="dsc-aadhaar-number">Aadhaar Number <span class="dsc-asterisk">*</span></label>
             <input type="text" id="dsc-aadhaar-number" name="aadhaar-number" maxlength="12" placeholder="XXXX XXXX XXXX"
                    required
                    oninvalid="dscsetAadhaarMessage(this)"
@@ -67,7 +67,8 @@
 
         <div class="dsc-form-group">
             <label for="dsc-category">Category <span class="dsc-asterisk">*</span></label>
-            <select id="dsc-category" name="category" required oninvalid="this.setCustomValidity('Select your category')"
+            <select id="dsc-category" name="category" required
+                    oninvalid="this.setCustomValidity('Select your category')"
                     oninput="this.setCustomValidity('')">
                 <option value="">-- Select your category --</option>
                 <option value="OC">OC</option>
@@ -90,7 +91,7 @@
 
         </div>
         <div class="dsc-form-group">
-            <label for="dsc-district">District <span class="dsc-asterisk">*</span><span class="dsc-spanAadharid">(Only applicants based out of Sri Satya Sai and  Anantapur districts eligible)</span></label>
+            <label for="dsc-district">District <span class="dsc-asterisk">*</span></label>
             <select id="dsc-district" name="district" onchange="dscupdateMandalOptions()" required
                     oninvalid="this.setCustomValidity('Choose your District')" oninput="this.setCustomValidity('')">
                 <option value="">-- Select your district --</option>
@@ -100,7 +101,8 @@
         </div>
         <div class="dsc-form-group">
             <label for="dsc-mandal">Mandal <span class="dsc-asterisk">*</span></label>
-            <select id="dsc-mandal" name="mandal" size="1" required oninvalid="this.setCustomValidity('Choose your Mandal')"
+            <select id="dsc-mandal" name="mandal" size="1" required
+                    oninvalid="this.setCustomValidity('Choose your Mandal')"
                     oninput="this.setCustomValidity('')">
                 <option value="">-- Select your Mandal --</option>
             </select>
@@ -127,9 +129,8 @@
             <input type="checkbox" id="dsc-check" name="check" required
                    oninvalid="this.setCustomValidity('Check it ')"
                    oninput="this.setCustomValidity('')">
-            <label for="dsc-check" class="dsc-text" id="dsc-text">Please make sure the details provided are correct as further
-                updates will be
-                shared to email ID and mobile number.</label>
+            <label for="dsc-check" class="dsc-text" id="dsc-text">Applicants based out of Anantapur and Sri Satya Sai
+                districts are only eligible and It’s mandatory to carry Aadhaar card to the exam center.</label>
 
         </div>
     </div>
