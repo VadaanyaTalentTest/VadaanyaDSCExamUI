@@ -153,6 +153,11 @@ let today = new Date();
 today.setDate(today.getDate() - 1);
 document.getElementById('dsc-dob').max = today.toISOString().split('T')[0];
 
+// Set the max date to December 31, 2007
+let maxDate = new Date('2006-12-31');
+document.getElementById('dsc-dob').max = maxDate.toISOString().split('T')[0];
+
+
 //--Validation for Email field--
 function dscsetEmailMessage(input) {
     const value = input.value;
