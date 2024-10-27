@@ -10,7 +10,6 @@
     border-radius: 15px;
     background-color: #F9F7ED;
 }
-
 .dsc-btn-container {
     display: flex;
     /*flex-direction: column;*/
@@ -20,19 +19,16 @@
     margin: 0 auto;
     padding: 30px;
 }
-
 .dsc-form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
     width: 48%;
 }
-
 .dsc-form-group label {
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     font-size: 30px;
 }
-
 .dsc-form-group input, .dsc-form-group select {
     padding: 10px;
     border: 1px solid #ddd;
@@ -40,9 +36,8 @@
     width: 100%;
     box-sizing: border-box;
     height:50px;
-    font-size: 20px;
+    font-size: 100%;
 }
-
 .dsc-form-group button {
     margin: 0 auto;
     border-radius: 15px;
@@ -80,10 +75,11 @@ button:hover {
 .dsc-header {
     text-align: center; /* Center the header */
     color: yellow; /* Set background color to yellow */
-    padding: 20px; /* Add some padding for better spacing */
+    padding: 10px; /* Add some padding for better spacing */
 }
 
 .dsc-header h1 {
+ font-size:x-large;
     margin: 0; /* Remove default margin */
     color: green; /* Set text color to black for contrast */
 }
@@ -117,12 +113,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 button:disabled {
     background-color: #0080ff;
     cursor: not-allowed;
-}
-.dsc-spanAadharid{
-    color:cornflowerblue;
-    font-size:20px;
-    font-style:italic;
-}
+
 .dsc-dialog {
     display: none;
     padding: 20px;
@@ -132,8 +123,9 @@ button:disabled {
     font-style:italic;
     color:green;
 }
-@media (min-width: 375px) and (max-width: 667px) {
-    body{
+/*---------------------------------*/
+@media (min-width:275px) and (max-width:991px){
+    body {
         margin: 0;
         padding: 0;
     }
@@ -144,28 +136,33 @@ button:disabled {
         font-style:italic;
     }
     .dsc-form-group label {
-        font-size:25px;
+        font-size: x-large;
     }
     .dsc-form-group label span{
 		/* visibility:visible; */
 	}
     .dsc-form-container {
         flex-direction: row;
-        /*flex-wrap: wrap;*/
-        width: 80%;   }
+        width: 80%;
+    }
     .dsc-header h1 {
         margin: 0; /* Remove default margin */
         color: green; /* Set text color to black for contrast */
         font-size: 100%;
     }
-    .dsc-form-group input, .dsc-form-group select,.dsc-form-group select option{
+    .dsc-form-group input, .dsc-form-group select, .dsc-form-group select option {
         padding: 10px;
         border: 1px solid #ddd;
         border-radius: 7px;
         width: 100%;
         box-sizing: border-box;
     }
-    #dsc-dummy{
+    .dsc-form-group{
+		flex:1 1 48%;
+        margin-right:4%;
+       width:50vw;
+	}
+ #dsc-dummy{
         display:none;
     }
     .dsc-form-group {
@@ -195,9 +192,4 @@ button:disabled {
         color: white;
         display:none;
     }
-     /*  .form-group button:hover {
-    background-color: #0080ff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}*/
-
 }
