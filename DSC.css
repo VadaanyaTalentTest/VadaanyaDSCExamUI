@@ -99,6 +99,9 @@ button:hover {
 .dsc-asterisk{
     color:red;
 }.dsc-form
+label span{
+    visibility:visible
+}
 /* Increase the size of the input field */
 input[type="date"] {
     padding: 10px;
@@ -117,11 +120,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 button:disabled {
     background-color: #0080ff;
     cursor: not-allowed;
-}
-.dsc-spanAadharid{
-    color:cornflowerblue;
-    font-size:20px;
-    font-style:italic;
 }
 .dsc-dialog {
     display: none;
@@ -142,11 +140,9 @@ button:disabled {
         font-size:15px;
         color:cornflowerblue;
         font-style:italic;
-    }  .dsc-spanAadharid {
-        color:cornflowerblue;
-        font-size:15px;
-        font-style:italic;
-    }
+    }  label span{
+    visibility:visible
+}
     .dsc-form-group label {
         font-size:25px;
     }
