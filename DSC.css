@@ -1,5 +1,5 @@
 #dsc-overlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -16,12 +16,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000; /* Ensure it appears above other elements */
-    width: 100px; /* Adjust width for smaller screens */
-    height: 100px; /* Adjust height for smaller screens */
+    width: 50px; /* Adjust width for smaller screens */
+    height: 50px; /* Adjust height for smaller screens */
 }
 #dsc-loader img {
-        width: 100%; /* Ensure the image scales with the loader */
-        height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Ensure the image scales with the loader */
+    height: auto; /* Maintain aspect ratio */
+}
+#dsc-registrationForm {
+    position: relative; /* Ensure the form is the reference point for the overlay */
 }
 .dsc-form-container {
     display: flex;
