@@ -208,27 +208,23 @@ function dscareFieldsFilled() {
         }
     });
 }
-
-document.getElementById('dsc-registrationForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-    dscsendData();
-});
-
+//--form submiting--
 function dscsendData() {
     const submitBtn = document.getElementById('dsc-submitBtn');
+    const overlay = document.getElementById('dsc-overlay');
+
     if (!dscareFieldsFilled()) {
         alert('Please fill all the required fields.');
         return false;
     }
     if (!document.querySelector('input[name="check"]').checked) {
-        //alert('Please make sure the details provided are correct as further
-        //                updates will be
-        //                shared to email ID and mobile number.');
         return false;
     }
 
     // Disable the submit button to prevent multiple clicks
     submitBtn.disabled = true;
+    // Show the overlay
+    overlay.style.display = 'flex';
 
     const data = {
         studentName: document.getElementById('dsc-student-name').value,
@@ -251,20 +247,37 @@ function dscsendData() {
         },
         body: JSON.stringify(data)
     })
-        .then(response => response.json())
+        .then(response => {
+            if (response.status === 409) {
+                alert('Applicant with the same Aadhaar number, mobile number, or email already exists.');
+                submitBtn.disabled = false;
+                overlay.style.display = 'none'; // Hide the overlay
+                throw new Error('User already exists.');
+            } else if (response.status === 407) {
+                alert('Limit exceeded.');
+                submitBtn.disabled = false;
+                overlay.style.display = 'none'; // Hide the overlay
+                throw new Error('Limit exceeded.');
+            } else if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+            return response.json();
+        })
         .then(data => {
-        console.log('Success:', data);
-        document.getElementById('dsc-registrationForm').style.display = 'none';
-        document.getElementById('dsc-thankYouDialog').style.display = 'block';
-
-        // Navigate to the main page after 5 seconds
-        setTimeout(function () {
-            window.location.href = 'https://vadaanya.org/'; // Replace with the actual URL of your main page
-        }, 5000); // 5000 milliseconds = 5 seconds
-    })
+            console.log('Success:', data);
+            document.getElementById('dsc-registrationForm').style.display = 'none';
+            const thankYouDialog = document.getElementById('dsc-thankYouDialog');
+            thankYouDialog.style.display = 'block';
+            thankYouDialog.innerHTML = `
+                <p>Your Application ID is: ${data.applicationNumber}</p>
+                <p>${thankYouDialog.innerHTML}</p>
+            `;
+            overlay.style.display = 'none'; // Hide the overlay
+        })
         .catch((error) => {
-        console.error('Error:', error);
-        // Re-enable the submit button if there's an error
-        submitBtn.disabled = false;
-    });
+            console.error('Error:', error);
+            // Re-enable the submit button if there's an error
+            submitBtn.disabled = false;
+            overlay.style.display = 'none'; // Hide the overlay
+        });
 }
