@@ -18,10 +18,11 @@
     <p>Thank you for registering. We will share further updates to your email ID and mobile number.</p>
 </div>
 <div id="dsc-overlay" style="display: none;">
-             <div id="dsc-loader">
-    <img src="https://www.bing.com/th/id/OGC.03648aceff76e1afa78079853065d234?pid=1.7&rurl=https%3a%2f%2fmedia.tenor.com%2fSLFiTi_nrQ4AAAAC%2floader.gif&ehk=M7T8eqVUljaTt69t1Mni8QrdkAy0X5oWQRYEQD%2b%2fs9w%3d" alt="Loading...">
-</div>
+    <div id="dsc-loader">
+        <img src="https://www.bing.com/th/id/OGC.03648aceff76e1afa78079853065d234?pid=1.7&rurl=https%3a%2f%2fmedia.tenor.com%2fSLFiTi_nrQ4AAAAC%2floader.gif&ehk=M7T8eqVUljaTt69t1Mni8QrdkAy0X5oWQRYEQD%2b%2fs9w%3d"
+             alt="Loading...">
     </div>
+</div>
 <form class="dsc-form-wrapper" onsubmit="return dscsendData()" id="dsc-registrationForm">
     <header class="dsc-header">
         <h1>DSC(SGT) MEGA GRAND TEST - 2024</h1>
@@ -31,15 +32,20 @@
 ">
         <div class="dsc-form-group">
             <label for="dsc-student-name">Student Name <span class="dsc-asterisk">*</span></label>
-            <input type="text" id="dsc-student-name" name="student-name" placeholder="Enter Student Name" maxlength="30" pattern="[A-Za-z\s]{1,32}" required="" oninvalid="dscsetCustomMessageStudent(this)" oninput="dscsetCustomMessageStudent(this)" class="form-control">
+            <input type="text" id="dsc-student-name" name="student-name" placeholder="Enter Student Name" maxlength="30"
+                   pattern="[A-Za-z\s]{1,32}" required="" oninvalid="dscsetCustomMessageStudent(this)"
+                   oninput="dscsetCustomMessageStudent(this)" class="form-control">
         </div>
         <div class="dsc-form-group">
             <label for="dsc-father-name">Father Name <span class="dsc-asterisk">*</span></label>
-            <input type="text" id="dsc-father-name" name="father-name" placeholder="Enter Father Name" maxlength="30" pattern="[A-Za-z\s]{1,32}" required="" oninvalid="dscsetCustomMessageFather(this)" oninput="dscsetCustomMessageFather(this)" class="form-control">
+            <input type="text" id="dsc-father-name" name="father-name" placeholder="Enter Father Name" maxlength="30"
+                   pattern="[A-Za-z\s]{1,32}" required="" oninvalid="dscsetCustomMessageFather(this)"
+                   oninput="dscsetCustomMessageFather(this)" class="form-control">
         </div>
         <div class="dsc-form-group">
             <label for="dsc-gender">Gender <span class="dsc-asterisk">*</span></label>
-            <select id="dsc-gender" name="gender" required="" oninvalid="this.setCustomValidity('Choose Your Gender')" oninput="this.setCustomValidity('')" class="form-control" style="
+            <select id="dsc-gender" name="gender" required="" oninvalid="this.setCustomValidity('Choose Your Gender')"
+                    oninput="this.setCustomValidity('')" class="form-control" style="
     height: 50px;
 ">
                 <option value="">-- Choose your Gender --</option>
@@ -50,19 +56,26 @@
         </div>
         <div class="dsc-form-group">
             <label for="dsc-aadhaar-number">Aadhaar Number <span class="dsc-asterisk">*</span></label>
-            <input type="text" id="dsc-aadhaar-number" name="aadhaar-number" maxlength="12" placeholder="XXXX XXXX XXXX" required="" oninvalid="dscsetAadhaarMessage(this)" oninput="dscsetAadhaarMessage(this)" class="form-control">
+            <input type="text" id="dsc-aadhaar-number" name="aadhaar-number" maxlength="12" placeholder="XXXX XXXX XXXX"
+                   required="" oninvalid="dscsetAadhaarMessage(this)" oninput="dscsetAadhaarMessage(this)"
+                   class="form-control">
         </div>
         <div class="dsc-form-group">
             <label for="dsc-mobile-number">Mobile Number <span class="dsc-asterisk">*</span></label>
             <div style="display: flex; align-items: center;">
-                <input type="text" value="+91" disabled="" style="width: 55px; background-color:white; text-align: center;" class="form-control">
-                <input type="text" id="dsc-mobile-number" name="mobile-number" maxlength="10" placeholder="0000000000" required="" oninvalid="dscsetMobileMessage(this)" oninput="dscsetMobileMessage(this)" class="form-control">
+                <input type="text" value="+91" disabled=""
+                       style="width: 55px; background-color:white; text-align: center;" class="form-control">
+                <input type="text" id="dsc-mobile-number" name="mobile-number" maxlength="10" placeholder="0000000000"
+                       required="" oninvalid="dscsetMobileMessage(this)" oninput="dscsetMobileMessage(this)"
+                       class="form-control">
             </div>
         </div>
 
         <div class="dsc-form-group">
             <label for="dsc-category">Category <span class="dsc-asterisk">*</span></label>
-            <select id="dsc-category" name="category" required="" oninvalid="this.setCustomValidity('Select your category')" oninput="this.setCustomValidity('')" class="form-control" style="
+            <select id="dsc-category" name="category" required=""
+                    oninvalid="this.setCustomValidity('Select your category')" oninput="this.setCustomValidity('')"
+                    class="form-control" style="
     height: 50px;
 ">
                 <option value="">-- Select your category --</option>
@@ -80,12 +93,15 @@
         </div>
         <div class="dsc-form-group">
             <label for="dsc-test-score">Previous TET Score</label>
-            <input type="text" id="dsc-test-score" name="test-score" maxlength="3" placeholder="Previous Tet Score" oninvalid="dscsetTetMessage(this)" oninput="dscsetTetMessage(this)" class="form-control">
+            <input type="text" id="dsc-test-score" name="test-score" maxlength="3" placeholder="Previous Tet Score"
+                   oninvalid="dscsetTetMessage(this)" oninput="dscsetTetMessage(this)" class="form-control">
 
         </div>
         <div class="dsc-form-group">
             <label for="dsc-district">District <span class="dsc-asterisk">*</span></label>
-            <select id="dsc-district" name="district" onchange="dscupdateMandalOptions()" required="" oninvalid="this.setCustomValidity('Choose your District')" oninput="this.setCustomValidity('')" class="form-control" style="
+            <select id="dsc-district" name="district" onchange="dscupdateMandalOptions()" required=""
+                    oninvalid="this.setCustomValidity('Choose your District')" oninput="this.setCustomValidity('')"
+                    class="form-control" style="
     height: 50px;
 ">
                 <option value="">-- Select your district --</option>
@@ -95,18 +111,23 @@
         </div>
         <div class="dsc-form-group">
             <label for="dsc-mandal">Mandal <span class="dsc-asterisk">*</span></label>
-            <select id="dsc-mandal" name="mandal" size="1" required="" oninvalid="this.setCustomValidity('Choose your Mandal')" oninput="this.setCustomValidity('')" class="form-control">
+            <select id="dsc-mandal" name="mandal" size="1" required=""
+                    oninvalid="this.setCustomValidity('Choose your Mandal')" oninput="this.setCustomValidity('')"
+                    class="form-control">
                 <option value="">-- Select your Mandal --</option>
             </select>
         </div>
         <div class="dsc-form-group">
             <label for="dsc-dob">Date of Birth <span class="dsc-asterisk">*</span></label>
-            <input type="date" id="dsc-dob" name="dob" placeholder="01/01/1990" required="" oninvalid="this.setCustomValidity('Choose your Date of Birth')" oninput="this.setCustomValidity('')" max="2024-10-26">
+            <input type="date" id="dsc-dob" name="dob" placeholder="01/01/1990" required=""
+                   oninvalid="this.setCustomValidity('Choose your Date of Birth')" oninput="this.setCustomValidity('')"
+                   max="2024-10-26">
 
         </div>
         <div class="dsc-form-group">
             <label for="dsc-email">Email Address <span class="dsc-asterisk">*</span></label>
-            <input type="email" id="dsc-email" name="email" placeholder="abc@gmail.com" required="" oninvalid="dscsetEmailMessage(this)" oninput="dscsetEmailMessage(this)" class="form-control">
+            <input type="email" id="dsc-email" name="email" placeholder="abc@gmail.com" required=""
+                   oninvalid="dscsetEmailMessage(this)" oninput="dscsetEmailMessage(this)" class="form-control">
 
         </div>
         <div class="dsc-form-group">
@@ -116,7 +137,8 @@
         <div class="dsc-terms" style="
     /* -webkit-text-security: disc; */
 ">
-            <input type="checkbox" id="dsc-check" name="check" required="" oninvalid="this.setCustomValidity('Check it ')" oninput="this.setCustomValidity('')">
+            <input type="checkbox" id="dsc-check" name="check" required=""
+                   oninvalid="this.setCustomValidity('Check it ')" oninput="this.setCustomValidity('')">
             <label for="dsc-check" class="dsc-text" id="dsc-text" style="
     display: contents;
 ">Applicants based out of Anantapur and Sri Satya Sai
