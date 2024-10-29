@@ -1,3 +1,28 @@
+#dsc-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+#dsc-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensure it appears above other elements */
+    width: 100px; /* Adjust width for smaller screens */
+    height: 100px; /* Adjust height for smaller screens */
+}
+#dsc-loader img {
+        width: 100%; /* Ensure the image scales with the loader */
+        height: auto; /* Maintain aspect ratio */
+}
 .dsc-form-container {
     display: flex;
     /*flex-direction: column;*/
@@ -77,7 +102,9 @@ button:hover {
     color: yellow; /* Set background color to yellow */
     padding: 10px; /* Add some padding for better spacing */
 }
+
 .dsc-header h1 {
+    font-size:x-large;
     margin: 0; /* Remove default margin */
     color: green; /* Set text color to black for contrast */
 }
@@ -92,8 +119,9 @@ button:hover {
 }
 .dsc-asterisk{
     color:red;
-}
-.dsc-form input[type="date"] {
+}.dsc-form
+/* Increase the size of the input field */
+input[type="date"] {
     padding: 10px;
     font-size: 18px; /* Increase font size */
     height: 50px; /* Increase height */
@@ -102,13 +130,10 @@ button:hover {
     width: 100%;
     box-sizing: border-box;
 }
+
 /* Increase the size of the calendar icon */
 input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 24px; /* Increase icon size */
-}
-button:disabled {
-    background-color: #0080ff;
-    cursor: not-allowed;
 }
 .dsc-dialog {
     display: none;
@@ -129,7 +154,7 @@ button:disabled {
     visibility: hidden!important;
 }
 /*---------------------------------*/
-@media (min-width:275px) and (max-width:650px){
+@media (min-width:225px) and (max-width:667px){
     body {
         margin: 0;
         padding: 0;
@@ -143,6 +168,9 @@ button:disabled {
     .dsc-form-group label {
         font-size: x-large;
     }
+    .dsc-form-group label span{
+		/* visibility:visible; */
+	}
     .dsc-form-container {
         flex-direction: row;
         width: 80%;
@@ -159,6 +187,11 @@ button:disabled {
         width: 100%;
         box-sizing: border-box;
     }
+    .dsc-form-group{
+		flex:1 1 48%;
+        margin-right:4%;
+       width:50vw;
+	}
  #dsc-dummy{
         display:none;
     }
@@ -166,8 +199,7 @@ button:disabled {
         flex: 1 1 48%;
         margin-right: 4%;
         width: 50vw;
-    }
-    .dsc-form-group button {
+    }.dsc-form-group button {
     width: 100%;
     height: 100%;
     background-color: green; /* Initial button color */
@@ -191,3 +223,4 @@ button:disabled {
         display:none;
     }
 }
+
