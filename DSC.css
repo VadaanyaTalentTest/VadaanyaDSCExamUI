@@ -147,14 +147,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-style:italic;
     color:green;
 }
-        label span {
-    display: inline-block !important;
-    font-weight: 500 !important;
-    -webkit-transform: translateX(20px)!important;
+label span {
+    /* display: inline-block; */
+    /* font-weight: 500; */
+    /* -webkit-transform: translateX(20px); */
     -ms-transform: translateX(20px);
-    transform: translateX(20px)!important;
-    opacity: 0!important;
-    visibility: hidden!important;
+    /* transform: translateX(20px); */
+    /* opacity: 0; */
+    /* visibility: hidden; */
 }
 /*---------------------------------*/
 @media (min-width:225px) and (max-width:667px){
