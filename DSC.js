@@ -72,9 +72,9 @@ function dscupdateMandalOptions() {
     const mandalSelect = document.getElementById('dsc-mandal');
     const selectedDistrict = document.getElementById('dsc-district').value;
     let options = '';
-    if (selectedDistrict === 'Sri Sathya Sai') {
+    if (selectedDistrict === 'SRI SATHYA SAI') {
         options = `
-            <option id="option" value="">--Select your Mandal--</option>
+            <option id="option" value="">-- Select your mandal --</option>
 <option id="option" value="AGALI">AGALI</option>
 <option id="option" value="AMADAGUR">AMADAGUR</option>
 <option id="option" value="AMARAPURAM">AMARAPURAM</option>
@@ -109,9 +109,9 @@ function dscupdateMandalOptions() {
 <option id="option" value="TANAKAL">TANAKAL</option>
 <option id="option" value="OTHER">OTHER</option>
         `;
-    } else if (selectedDistrict === 'Ananthapur') {
+    } else if (selectedDistrict === 'ANANTHAPUR') {
         options = `
-            <option id="option" value="">--SELECT YOUR MANDAL--</option>
+            <option id="option" value="">-- Select your mandal --</option>
 <option id="option" value="ANANTAPUR">ANANTAPUR</option>
 <option id="option" value="ATMAKUR">ATMAKUR</option>
 <option id="option" value="BELUGUPPA">BELUGUPPA</option>
@@ -161,23 +161,20 @@ document.getElementById('dsc-dob').max = maxDate.toISOString().split('T')[0];
 //--Validation for Email field--
 function dscsetEmailMessage(input) {
     const value = input.value;
-    //const regex = /^[a-z0-9._%+-]+@gmail\.com$/;
     const atSymbol = value.includes('@');
     const domain = value.endsWith('.com');
-    if(input.value ===''){
-        input.setCustomValidity('Enter gmail address');
-    }
-    else if (input.validity.valueMissing) {
-        input.setCustomValidity('Please enter a email address');
+
+    if (value === '') {
+        input.setCustomValidity('Enter a Gmail address');
     } else if (!atSymbol) {
         input.setCustomValidity('Please enter a valid email address like abc@gmail.com');
     } else if (!domain) {
         input.setCustomValidity('Please enter a valid email address ending with .com');
-    }
-    else {
+    } else {
         input.setCustomValidity('');
     }
 }
+
 //--Validation for Reset btn--
 function Reset() {
     document.getElementById('dsc-student-name').value = '';
@@ -213,6 +210,11 @@ function dscsendData() {
     const submitBtn = document.getElementById('dsc-submitBtn');
     const overlay = document.getElementById('dsc-overlay');
 
+    const emailInput = document.getElementById('dsc-email');
+    const emailValue = emailInput.value;
+    const atSymbol = emailValue.includes('@');
+    const domain = emailValue.endsWith('.com');
+
     if (!dscareFieldsFilled()) {
         alert('Please fill all the required fields.');
         return false;
@@ -220,7 +222,11 @@ function dscsendData() {
     if (!document.querySelector('input[name="check"]').checked) {
         return false;
     }
-
+    if (!atSymbol) {
+       return false;
+    } if (!domain) {
+        return false;
+    }
     // Disable the submit button to prevent multiple clicks
     submitBtn.disabled = true;
     // Show the overlay
@@ -269,7 +275,7 @@ function dscsendData() {
             const thankYouDialog = document.getElementById('dsc-thankYouDialog');
             thankYouDialog.style.display = 'block';
             thankYouDialog.innerHTML = `
-                <p>Your Application ID is: ${data.applicationNumber}</p>
+                <p><b>Your Application ID is: ${data.applicationNumber}</b></p>
                 <p>${thankYouDialog.innerHTML}</p>
             `;
             overlay.style.display = 'none'; // Hide the overlay
