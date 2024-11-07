@@ -78,7 +78,7 @@ function dscupdateMandalOptions() {
 <option id="option" value="AGALI">AGALI</option>
 <option id="option" value="AMADAGUR">AMADAGUR</option>
 <option id="option" value="AMARAPURAM">AMARAPURAM</option>
-<option id="option" value="BATHALAPALLE">BATHALAPALLE</option>
+<option id="option" value="BATHALAPALLI">BATHALAPALLI</option>
 <option id="option" value="BUKKAPATNAM">BUKKAPATNAM</option>
 <option id="option" value="CHENNEKOTHAPALLI">CHENNEKOTHAPALLI</option>
 <option id="option" value="CHILAMATHUR">CHILAMATHUR</option>
@@ -137,7 +137,7 @@ function dscupdateMandalOptions() {
 <option id="option" value="RAYADURG">RAYADURG</option>
 <option id="option" value="SETTURU">SETTURU</option>
 <option id="option" value="SINGANAMALA">SINGANAMALA</option>
-<option id="option" value="TADPATRI">TADPATRI</option>
+<option id="option" value="TADIPATRI">TADIPATRI</option>
 <option id="option" value="URAVAKONDA">URAVAKONDA</option>
 <option id="option" value="VAJRAKARUR">VAJRAKARUR</option>
 <option id="option" value="VIDAPANAKAL">VIDAPANAKAL</option>
@@ -259,8 +259,8 @@ function dscsendData() {
                 submitBtn.disabled = false;
                 overlay.style.display = 'none'; // Hide the overlay
                 throw new Error('User already exists.');
-            } else if (response.status === 407) {
-                alert('Limit exceeded.');
+            } else if (response.status === 403) {
+                alert('Sorry, we are not accepting further applications as we reached our prescribed limit of 2,000');
                 submitBtn.disabled = false;
                 overlay.style.display = 'none'; // Hide the overlay
                 throw new Error('Limit exceeded.');
@@ -275,8 +275,9 @@ function dscsendData() {
             const thankYouDialog = document.getElementById('dsc-thankYouDialog');
             thankYouDialog.style.display = 'block';
             thankYouDialog.innerHTML = `
-                <p><b>Your Application ID is: ${data.applicationNumber}</b></p>
+                <p><b>Your Application ID is : ${data.applicationNumber}</b></p>
                 <p>${thankYouDialog.innerHTML}</p>
+                <p>If you didn’t get an email, please contact <b>vadaanyadsc2024@gmail.com</b></p>
             `;
             overlay.style.display = 'none'; // Hide the overlay
         })

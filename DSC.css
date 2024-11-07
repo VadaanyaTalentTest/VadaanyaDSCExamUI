@@ -94,11 +94,12 @@
 }
 button:hover {
     background-color: #0080ff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 10px 10px 5px grey;
+
 }
 .dsc-form-group button[type="reset"]:hover {
     background-color:        #ff0000; /* Lighter color on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+     box-shadow: 10px 10px 5px grey; /* Shadow on hover */
 }
 .dsc-header {
     text-align: center; /* Center the header */
@@ -116,8 +117,7 @@ button:hover {
 }
 .dsc-text{
     margin-top:10px;
-    font-size: 100%;
-    color:cornflowerblue;
+    font-size: 20px;
     font-style:italic;
 }
 .dsc-asterisk{
@@ -164,8 +164,7 @@ label span {
     }
     #dsc-text{
         margin-top: 0px;
-        font-size:15px;
-        color:cornflowerblue;
+        font-size:17px;
         font-style:italic;
     }
     .dsc-form-group label {
