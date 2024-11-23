@@ -1,207 +1,235 @@
 #dsc-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensure it appears above other elements */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other elements */
 }
 #dsc-loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000; /* Ensure it appears above other elements */
-    width: 50px; /* Adjust width for smaller screens */
-    height: 50px; /* Adjust height for smaller screens */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Ensure it appears above other elements */
+  width: 50px; /* Adjust width for smaller screens */
+  height: 50px; /* Adjust height for smaller screens */
 }
 #dsc-loader img {
-    width: 100%; /* Ensure the image scales with the loader */
-    height: auto; /* Maintain aspect ratio */
+  width: 100%; /* Ensure the image scales with the loader */
+  height: auto; /* Maintain aspect ratio */
 }
 #dsc-registrationForm {
-    position: relative; /* Ensure the form is the reference point for the overlay */
+  position: relative; /* Ensure the form is the reference point for the overlay */
 }
 .dsc-form-container {
-    display: flex;
-    /*flex-direction: column;*/
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 3000px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    background-color: #F9F7ED;
+  display: flex;
+  /*flex-direction: column;*/
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 3000px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  background-color: #f9f7ed;
+}
+.dsc-form-container-no-flex {
+  background-color: #f9f7ed;
+}
+.dsc-card {
+  background-color: #f9f7ed;
 }
 .dsc-btn-container {
-    display: flex;
-    /*flex-direction: column;*/
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px;
+  display: flex;
+  /*flex-direction: column;*/
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+}
+.dsc-btn-success {
+  padding: 10px;
+  /* width: 25%; */
+}
+.dsc-btn-success:hover {
+  background-color: rgb(0, 128, 255);
+  color: white;
+  /* width: 25%; */
 }
 .dsc-form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    width: 48%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 48%;
 }
-.dsc-form-group label {
-    /* margin-bottom: 5px; */
-    font-size: x-large;
+.dsc-form-group-row {
+  margin-bottom: 30px;
 }
-.dsc-form-group input, .dsc-form-group select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 7px;
-    width: 100%;
-    box-sizing: border-box;
-    height:50px;
-    font-size: 100%;
+.dsc-form-group label,
+.dsc-form-group-row label {
+  /* margin-bottom: 5px; */
+  font-size: x-large;
+}
+.dsc-form-group input,
+.dsc-form-group select,
+.dsc-form-group-row input,
+.dsc-form-group-row select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 50px;
+  font-size: 100%;
 }
 .dsc-form-group button {
-    margin: 0 auto;
-    border-radius: 15px;
-    width: 100%;
-    background-color: green; /* Initial button color */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 35px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    height: 80px;
-    box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
-    font-style:italic;
+  margin: 0 auto;
+  border-radius: 15px;
+  width: 100%;
+  background-color: green; /* Initial button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 35px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  height: 80px;
+  box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
+  font-style: italic;
 }
 .dsc-form-group button[type="reset"] {
-    background-color: #ff8000;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 35px;
-    font-style:italic;
-    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 35px;
+  font-style: italic;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
 }
 button:hover {
-    background-color: #0080ff;
-    box-shadow: 10px 10px 5px grey;
-
+  background-color: #0080ff;
+  box-shadow: 10px 10px 5px grey;
 }
 .dsc-form-group button[type="reset"]:hover {
-    background-color:        #ff0000; /* Lighter color on hover */
-     box-shadow: 10px 10px 5px grey; /* Shadow on hover */
+  background-color: #ff0000; /* Lighter color on hover */
+  box-shadow: 10px 10px 5px grey; /* Shadow on hover */
 }
 .dsc-header {
-    text-align: center; /* Center the header */
-    color: yellow; /* Set background color to yellow */
-    padding: 10px; /* Add some padding for better spacing */
+  text-align: center; /* Center the header */
+  color: yellow; /* Set background color to yellow */
+  padding: 10px; /* Add some padding for better spacing */
 }
 
 .dsc-header h1 {
-    font-size:x-large;
-    margin: 0; /* Remove default margin */
-    color: green; /* Set text color to black for contrast */
+  font-size: x-large;
+  margin: 0; /* Remove default margin */
+  color: green; /* Set text color to black for contrast */
 }
-#dsc-dummy{
-    visibility:hidden;
+#dsc-dummy {
+  visibility: hidden;
 }
-.dsc-text{
-    margin-top:10px;
-    font-size: 20px;
-    font-style:italic;
+.dsc-text {
+  margin-top: 10px;
+  font-size: 20px;
+  font-style: italic;
 }
-.dsc-asterisk{
-    color:red;
-}.dsc-form
+.dsc-label {
+  font-size: x-large;
+}
+.dsc-asterisk {
+  color: red;
+}
+.dsc-form
 /* Increase the size of the input field */
 input[type="date"] {
-    padding: 10px;
-    font-size: 18px; /* Increase font size */
-    height: 50px; /* Increase height */
-    border-radius: 7px;
-    border: 1px solid #ddd;
-    width: 100%;
-    box-sizing: border-box;
+  padding: 10px;
+  font-size: 18px; /* Increase font size */
+  height: 50px; /* Increase height */
+  border-radius: 7px;
+  border: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Increase the size of the calendar icon */
 input[type="date"]::-webkit-calendar-picker-indicator {
-    font-size: 24px; /* Increase icon size */
+  font-size: 24px; /* Increase icon size */
 }
 .dsc-dialog {
-    display: none;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background: #F9F7ED;
-    text-align:center;
-    font-style:italic;
-    color:green;
+  display: none;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: #f9f7ed;
+  text-align: center;
+  font-style: italic;
+  color: green;
 }
 label span {
-    /* display: inline-block; */
-    /* font-weight: 500; */
-    /* -webkit-transform: translateX(20px); */
-    -ms-transform: translateX(20px);
-    /* transform: translateX(20px); */
-    /* opacity: 0; */
-    /* visibility: hidden; */
+  /* display: inline-block; */
+  /* font-weight: 500; */
+  /* -webkit-transform: translateX(20px); */
+  -ms-transform: translateX(20px);
+  /* transform: translateX(20px); */
+  /* opacity: 0; */
+  /* visibility: hidden; */
 }
 /*---------------------------------*/
-@media (min-width:225px) and (max-width:667px){
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    #dsc-text{
-        margin-top: 0px;
-        font-size:17px;
-        font-style:italic;
-    }
-    .dsc-form-group label {
-        font-size: x-large;
-    }
-    .dsc-form-group label span{
-		/* visibility:visible; */
-	}
-    .dsc-form-container {
-        flex-direction: row;
-        width: 80%;
-    }
-    .dsc-header h1 {
-        margin: 0; /* Remove default margin */
-        color: green; /* Set text color to black for contrast */
-        font-size: 100%;
-    }
-    .dsc-form-group input, .dsc-form-group select, .dsc-form-group select option {
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 7px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    .dsc-form-group{
-		flex:1 1 48%;
-        margin-right:4%;
-       width:50vw;
-	}
- #dsc-dummy{
-        display:none;
-    }
-    .dsc-form-group {
-        flex: 1 1 48%;
-        margin-right: 4%;
-        width: 50vw;
-    }.dsc-form-group button {
+@media (min-width: 225px) and (max-width: 667px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #dsc-text {
+    margin-top: 0px;
+    font-size: 17px;
+    font-style: italic;
+  }
+  .dsc-form-group label {
+    font-size: x-large;
+  }
+  .dsc-form-group label span {
+    /* visibility:visible; */
+  }
+  .dsc-form-container {
+    flex-direction: row;
+    width: 80%;
+  }
+  .dsc-header h1 {
+    margin: 0; /* Remove default margin */
+    color: green; /* Set text color to black for contrast */
+    font-size: 100%;
+  }
+  .dsc-form-group input,
+  .dsc-form-group select,
+  .dsc-form-group select option {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .dsc-form-group {
+    flex: 1 1 48%;
+    margin-right: 4%;
+    width: 50vw;
+  }
+  #dsc-dummy {
+    display: none;
+  }
+  .dsc-form-group {
+    flex: 1 1 48%;
+    margin-right: 4%;
+    width: 50vw;
+  }
+  .dsc-form-group button {
     width: 100%;
     height: 100%;
     background-color: green; /* Initial button color */
@@ -212,17 +240,27 @@ label span {
     text-decoration: none;
     display: inline-block;
     font-size: 25px;
-    font-style:italic;
+    font-style: italic;
     transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
     box-shadow: 0 14px 18px rgba(0, 0, 0, 0.2); /* Added shadow */
+  }
+  .dsc-form-group button:nth-child(2) {
+    display: none;
+  }
+  .dsc-form-group button[type="reset"] {
+    background-color: orange;
+    color: white;
+    display: none;
+  }
 }
-    .dsc-form-group button:nth-child(2) {
-        display: none;
-    }
-    .dsc-form-group button[type="reset"] {
-        background-color: orange;
-        color: white;
-        display:none;
-    }
+.dsc-note {
+  font-size: 14px;
+  margin-top: 10px;
+  font-style: italic;
 }
-
+.dsc-hr {
+  border: none;
+  width: 75%;
+  background-color: green;
+  height: 1.5px;
+}
