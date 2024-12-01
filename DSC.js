@@ -349,26 +349,30 @@ async function dscHandleGenerateHallTicket(event) {
   url.searchParams.append("aadhaarNumber", aadhaarNumber ? aadhaarNumber : 0);
   url.searchParams.append("dob", dob);
 
-  fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        return response.text().then((text) => {
-          throw new Error(text);
-        });
-      }
-      return response.blob();
-    })
-    .then((blob) => {
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.style.display = "none";
-      a.href = url;
-      a.download = "hallticket.pdf";
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-    })
-    .catch((error) => console.error("Error fetching the hall ticket:", error));
+  fetch(url).then((response) => {
+    const fileName = response.headers.get("X-File-Name") || "hallticket.pdf";
+    if (!response.ok) {
+      return response.text().then((text) => {
+        alert(text);
+        throw new Error(text);
+      });
+    }
+    return response
+      .blob()
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      })
+      .catch((error) =>
+        console.error("Error fetching the hall ticket:", error)
+      );
+  });
 
   document.getElementById("hallTicketGenerationForm").reset();
 }
