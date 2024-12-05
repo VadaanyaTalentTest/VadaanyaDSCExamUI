@@ -327,6 +327,22 @@ function onInputAadhaarNumber() {
   }
 }
 
+function dscShowAlertMessage(elementId, className, message, subMessage) {
+  const alert = document.createElement("div");
+  alert.className = className;
+  alert.role = "alert";
+  alert.innerText = message;
+  if (subMessage) {
+    let temp = document.createElement("span");
+    temp.innerHTML = `<br><em>${subMessage}</em>`;
+    alert.appendChild(temp);
+  }
+  document.getElementById(elementId).appendChild(alert);
+  setTimeout(() => {
+    alert.remove();
+  }, 5000);
+}
+
 //--hallticket-form submiting--
 async function dscHandleGenerateHallTicket(event) {
   event.preventDefault(); // Prevent the default form submission
@@ -353,7 +369,12 @@ async function dscHandleGenerateHallTicket(event) {
     const fileName = response.headers.get("X-File-Name") || "hallticket.pdf";
     if (!response.ok) {
       return response.text().then((text) => {
-        alert(text);
+        dscShowAlertMessage(
+          "dsc-alert-message",
+          "alert alert-danger",
+          "Hall-ticket downloaded failed.",
+          `${text}`.replace("Internal server error: ", "")
+        );
         throw new Error(text);
       });
     }
@@ -368,10 +389,20 @@ async function dscHandleGenerateHallTicket(event) {
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
+        dscShowAlertMessage(
+          "dsc-alert-message",
+          "alert alert-success",
+          "Hall-ticket is downloaded successfully."
+        );
       })
-      .catch((error) =>
-        console.error("Error fetching the hall ticket:", error)
-      );
+      .catch((error) => {
+        console.error("Error fetching the hall ticket:", error);
+        dscShowAlertMessage(
+          "dsc-alert-message",
+          "alert alert-danger",
+          "Hall-ticket downloaded failed."
+        );
+      });
   });
 
   document.getElementById("hallTicketGenerationForm").reset();
