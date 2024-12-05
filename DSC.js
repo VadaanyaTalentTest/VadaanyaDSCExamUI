@@ -400,7 +400,7 @@ async function dscHandleGenerateHallTicket(event) {
         dscShowAlertMessage(
           "dsc-alert-message",
           "alert alert-danger",
-          "Hall-ticket downloaded failed."
+          "Hall-ticket downloaded failed. Some error occurred."
         );
       });
   });
