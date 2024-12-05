@@ -30,87 +30,96 @@
               class="card-body"
               onsubmit="dscHandleGenerateHallTicket(event)"
             >
-              <form id="hallTicketGenerationForm" class="form-horizontal">
-                <div
-                  class="form-group row dsc-form-group-row justify-content-center mt-5 mb-3"
-                >
-                  <div class="col-sm-1"></div>
-                  <div class="col-sm-4" style="text-align: center">
-                    <label for="applicationNumber" class="col-form-label"
-                      >Application Number
-                      <span class="dsc-asterisk">*</span></label
-                    >
-                  </div>
-                  <div class="col-sm-5" style="text-align: center">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="applicationNumber"
-                      placeholder="Enter application number"
-                      oninput="onInputApplicationNumber()"
-                      required
-                    />
-                  </div>
-                  <div class="col-sm-2"></div>
+            <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-8">
+                <div class="text-center">
+                  <div class="text-center mt-2 mb-2" id="dsc-alert-message"></div>
                 </div>
-                <div class="form-group row dsc-form-group-row justify-content-center mt-0 mb-0">
-                  <div class="col-sm-4"></div>
-                  <div class="col-sm-2 text-center text-secondary">or</div>
-                  <div class="col-sm-4"></div>
-                </div>
-                <div
-                  class="form-group row dsc-form-group-row justify-content-center mt-3"
-                >
-                  <div class="col-sm-1"></div>
-                  <div class="col-sm-4" style="text-align: center">
-                    <label for="aadhaarNumber" class="col-form-label"
-                      >Aadhaar Number
-                      <span class="dsc-asterisk">*</span></label
-                    >
-                  </div>
-                  <div class="col-sm-5" style="text-align: center">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="aadhaarNumber"
-                      placeholder="Enter aadhaar number"
-                      oninput="onInputAadhaarNumber()"
-                      required
-                    />
-                  </div>
-                  <div class="col-sm-2"></div>
-                </div>
-                <div
-                  class="form-group row dsc-form-group-row justify-content-center mt-5"
-                >
-                  <div class="col-sm-1"></div>
-                  <div class="col-sm-4" style="text-align: center">
-                    <label for="dob" class="col-form-label"
-                      >Date of Birth <span class="dsc-asterisk">*</span></label
-                    >
-                  </div>
-                  <div class="col-sm-5" style="text-align: center">
-                    <input type="date" class="form-control" id="dob" required />
-                  </div>
-                  <div class="col-sm-2"></div>
-                </div>
-                <div class="form-group text-center mt-5 mb-3">
-                  <button type="submit" class="btn btn-success dsc-btn-success">
-                    Generate Hall-ticket
-                  </button>
-                  <p class="text-dark fw-semibold mt-3">
-                    <strong>Note:</strong> Hall-ticket will be automatically
-                    downloaded as PDF
-                  </p>
-                  <p class="text-primary dsc-note mt-4">
-                    If the PDF is not downloaded, please check the download
-                    permissions. <br />
-                    If still there is an issue, contact us via
-                    <strong>vadaanyadsc2024@gmail.com</strong>.
-                  </p>
-                </div>
-              </form>
+              </div>
+              <div class="col-sm-2"></div>
             </div>
+                <form id="hallTicketGenerationForm" class="form-horizontal">
+                  <div
+                    class="form-group row dsc-form-group-row justify-content-center mt-5 mb-3"
+                  >
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-4" style="text-align: center">
+                      <label for="applicationNumber" class="col-form-label"
+                        >Application Number
+                        <span class="dsc-asterisk">*</span></label
+                      >
+                    </div>
+                    <div class="col-sm-5" style="text-align: center">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="applicationNumber"
+                        placeholder="Enter application number"
+                        oninput="onInputApplicationNumber()"
+                        required
+                      />
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+                <div class="form-group row dsc-form-group-row justify-content-center mt-0 mb-0">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-2 text-center text-secondary">or</div>
+                    <div class="col-sm-4"></div>
+                  </div>
+                  <div
+                    class="form-group row dsc-form-group-row justify-content-center mt-3"
+                  >
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-4" style="text-align: center">
+                      <label for="aadhaarNumber" class="col-form-label"
+                        >Aadhaar Number
+                        <span class="dsc-asterisk">*</span></label
+                      >
+                    </div>
+                    <div class="col-sm-5" style="text-align: center">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="aadhaarNumber"
+                        placeholder="Enter aadhaar number"
+                        oninput="onInputAadhaarNumber()"
+                        required
+                      />
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+                  <div
+                    class="form-group row dsc-form-group-row justify-content-center mt-5"
+                  >
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-4" style="text-align: center">
+                      <label for="dob" class="col-form-label"
+                      >Date of Birth <span class="dsc-asterisk">*</span></label
+                      >
+                    </div>
+                    <div class="col-sm-5" style="text-align: center">
+                    <input type="date" class="form-control" id="dob" required />
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+                  <div class="form-group text-center mt-5 mb-3">
+                  <button type="submit" class="btn btn-success dsc-btn-success">
+                      Generate Hall-ticket
+                    </button>
+                    <p class="text-dark fw-semibold mt-3">
+                      <strong>Note:</strong> Hall-ticket will be automatically
+                      downloaded as PDF
+                    </p>
+                    <p class="text-primary dsc-note mt-4">
+                      If the PDF is not downloaded, please check the download
+                      permissions. <br />
+                      If still there is an issue, contact us via
+                      <strong>vadaanyadsc2024@gmail.com</strong>.
+                    </p>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
