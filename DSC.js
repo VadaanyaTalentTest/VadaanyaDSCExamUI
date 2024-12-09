@@ -26,6 +26,17 @@ function dscsetCustomMessageFather(input) {
     input.setCustomValidity("");
   }
 }
+//--Validation for Application Number field--
+function dscsetApplicationMessage(input) {
+  if (input.value === "") {
+    input.setCustomValidity("Enter Application Number");
+  } else if (/[^0-9]/.test(input.value)) {
+    input.value = "";
+    input.setCustomValidity("Please enter numbers only");
+  } else {
+    input.setCustomValidity("");
+  }
+}
 //--Validation for Aadhaar field--
 function dscsetAadhaarMessage(input) {
   if (input.value === "") {
@@ -303,7 +314,8 @@ function dscsendData() {
     });
 }
 
-function onInputApplicationNumber() {
+function onInputApplicationNumber(value) {
+  dscsetApplicationMessage(value);
   const applicationNumber = document.getElementById("applicationNumber");
   const aadhaarNumber = document.getElementById("aadhaarNumber");
   if (applicationNumber.value.trim() !== "") {
@@ -315,7 +327,8 @@ function onInputApplicationNumber() {
   }
 }
 
-function onInputAadhaarNumber() {
+function onInputAadhaarNumber(value) {
+  dscsetAadhaarMessage(value);
   const applicationNumber = document.getElementById("applicationNumber");
   const aadhaarNumber = document.getElementById("aadhaarNumber");
   if (aadhaarNumber.value.trim() !== "") {
@@ -327,11 +340,19 @@ function onInputAadhaarNumber() {
   }
 }
 
+function onSubmitHallticketForm() {
+  document.getElementById("hallTicketGenerationForm").reset();
+  applicationNumber.setAttribute("required", "required");
+  aadhaarNumber.setAttribute("required", "required");
+  applicationNumber.disabled = false;
+  aadhaarNumber.disabled = false;
+}
+
 function dscShowAlertMessage(elementId, className, message, subMessage) {
   const alert = document.createElement("div");
   alert.className = className;
   alert.role = "alert";
-  alert.innerText = message;
+  alert.innerHTML = `<strong>${message}</strong>`;
   if (subMessage) {
     let temp = document.createElement("span");
     temp.innerHTML = `<br><em>${subMessage}</em>`;
@@ -373,9 +394,9 @@ async function dscHandleGenerateHallTicket(event) {
           "dsc-alert-message",
           "alert alert-danger",
           "Hall-ticket downloaded failed.",
-          `${text}`.replace("Internal server error: ", "")
+          text
         );
-        throw new Error(text);
+        onSubmitHallticketForm();
       });
     }
     return response
@@ -394,6 +415,7 @@ async function dscHandleGenerateHallTicket(event) {
           "alert alert-success",
           "Hall-ticket is downloaded successfully."
         );
+        onSubmitHallticketForm();
       })
       .catch((error) => {
         console.error("Error fetching the hall ticket:", error);
@@ -402,8 +424,7 @@ async function dscHandleGenerateHallTicket(event) {
           "alert alert-danger",
           "Hall-ticket downloaded failed. Some error occurred."
         );
+        onSubmitHallticketForm();
       });
   });
-
-  document.getElementById("hallTicketGenerationForm").reset();
 }

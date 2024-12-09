@@ -56,7 +56,8 @@
                         class="form-control"
                         id="applicationNumber"
                         placeholder="Enter application number"
-                        oninput="onInputApplicationNumber()"
+                        oninvalid="dscsetApplicationMessage(this)"
+                        oninput="onInputApplicationNumber(this)"
                         required
                       />
                     </div>
@@ -82,8 +83,10 @@
                         type="text"
                         class="form-control"
                         id="aadhaarNumber"
-                        placeholder="Enter aadhaar number"
-                        oninput="onInputAadhaarNumber()"
+                        maxlength="12" 
+                        placeholder="XXXX XXXX XXXX"
+                        oninvalid="dscsetAadhaarMessage(this)"
+                        oninput="onInputAadhaarNumber(this)"
                         required
                       />
                     </div>
@@ -99,7 +102,16 @@
                       >
                     </div>
                     <div class="col-sm-5" style="text-align: center">
-                    <input type="date" class="form-control" id="dob" required />
+                    <input 
+                      type="date" 
+                      class="form-control" 
+                      id="dob" 
+                      placeholder="01/01/1990" 
+                      max="2024-10-26" 
+                      oninvalid="this.setCustomValidity('Choose your Date of Birth')" 
+                      oninput="this.setCustomValidity('')" 
+                      required 
+                    />
                     </div>
                     <div class="col-sm-2"></div>
                   </div>
