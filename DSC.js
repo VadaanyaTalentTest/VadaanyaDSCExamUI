@@ -378,7 +378,7 @@ async function dscHandleGenerateHallTicket(event) {
   console.log("Entered Aadhar Number:", aadhaarNumber);
   console.log("Entered Date of Birth:", dob);
 
-  const url = new URL("http://localhost:5225/HallTicket/DSC-2024");
+  const url = new URL("https://vadaanyadscapi.azurewebsites.net/HallTicket/DSC-2024");
   url.searchParams.append(
     "applicationNumber",
     applicationNumber ? applicationNumber : 0
